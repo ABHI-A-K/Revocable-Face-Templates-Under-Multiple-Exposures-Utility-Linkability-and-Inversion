@@ -1,0 +1,3 @@
+pair_id,fold,label,pair_type,cosine_similarity
+1,1,1,genuine,0.06732659786939621
+351,1,0,impostor,0.01307168323546648

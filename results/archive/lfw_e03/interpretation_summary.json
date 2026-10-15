@@ -1,0 +1,18 @@
+{
+  "conclusion": "SUPPORTED_WITHIN_E03_GUARDRAILS",
+  "pooled_attacker_auc": 0.5020237666975743,
+  "pooled_auc_linkability_index": 0.004047533395148628,
+  "pooled_d_sys": 0.006489701558323147,
+  "worst_key_pair_attacker_auc": 0.525607556526455,
+  "worst_key_pair_d_sys": 0.02686072353994723,
+  "worst_key_pair_absolute_mean_gap": 0.003889080652836552,
+  "oof_balanced_linkage_accuracy": 0.5015898922622544,
+  "worst_same_image_attacker_auc": 0.5331515435442206,
+  "guardrail_checks": {
+    "worst_key_pair_attacker_auc_pass": true,
+    "worst_key_pair_d_sys_pass": true,
+    "oof_balanced_linkage_accuracy_pass": true,
+    "same_image_attacker_auc_pass": true
+  },
+  "scope": "Empirical evidence for LFW, five fixed RO keys, and 128-bit templates only."
+}

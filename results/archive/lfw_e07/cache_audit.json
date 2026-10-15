@@ -1,0 +1,12 @@
+{
+  "dataset_root": "/kaggle/input/datasets/jessicali9530/lfw-dataset",
+  "cache_dir": "/kaggle/input/datasets/abhiak0709/cache-embeddings-from-lfw-e03",
+  "embedding_shape": [
+    7701,
+    512
+  ],
+  "valid_embeddings": 7682,
+  "invalid_or_failed_embeddings": 19,
+  "raw_embeddings_sha256": "3cfe3e75c7423916e284c7cd198288627860513aa6f0bec23a204bdc5ef47c39",
+  "metadata_sha256": "5ae838fc6af46c3c2b29a6c50d53c479492df76526155924baac86559d375375"
+}

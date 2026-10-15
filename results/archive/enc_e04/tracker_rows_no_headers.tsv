@@ -1,0 +1,12 @@
+CFP-ENC-E04	MobileFaceNet	PCA_GUIDED_RO	128 bits	K=10 calibrated	Fresh-key cross-image ASR 32.9556%; 95% CI [29.2796, 36.7585]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	MobileFaceNet	PCA_GUIDED_RO	512 bits	K=10 calibrated	Fresh-key cross-image ASR 78.5556%; 95% CI [73.7835, 82.9347]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	MobileFaceNet	RO	128 bits	K=10 calibrated	Fresh-key cross-image ASR 19.6556%; 95% CI [17.1195, 22.3313]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	MobileFaceNet	RO	512 bits	K=10 calibrated	Fresh-key cross-image ASR 78.0222%; 95% CI [73.3947, 82.3947]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	MobileFaceNet	SRHT	128 bits	K=10 calibrated	Fresh-key cross-image ASR 18.8444%; 95% CI [16.3403, 21.4382]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	MobileFaceNet	SRHT	512 bits	K=10 calibrated	Fresh-key cross-image ASR 77.5222%; 95% CI [72.8743, 81.8755]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	ResNet50_ArcFace	PCA_GUIDED_RO	128 bits	K=10 calibrated	Fresh-key cross-image ASR 53.0889%; 95% CI [49.0896, 57.1072]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	ResNet50_ArcFace	PCA_GUIDED_RO	512 bits	K=10 calibrated	Fresh-key cross-image ASR 92.0333%; 95% CI [88.8767, 94.8269]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	ResNet50_ArcFace	RO	128 bits	K=10 calibrated	Fresh-key cross-image ASR 38.4556%; 95% CI [34.9081, 41.8212]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	ResNet50_ArcFace	RO	512 bits	K=10 calibrated	Fresh-key cross-image ASR 92.3000%; 95% CI [89.1173, 95.0553]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	ResNet50_ArcFace	SRHT	128 bits	K=10 calibrated	Fresh-key cross-image ASR 38.2778%; 95% CI [34.8109, 41.7043]%	2000 paired identity resamples; frozen models/thresholds; screened subset
+CFP-ENC-E04	ResNet50_ArcFace	SRHT	512 bits	K=10 calibrated	Fresh-key cross-image ASR 92.2333%; 95% CI [89.1080, 95.0748]%	2000 paired identity resamples; frozen models/thresholds; screened subset

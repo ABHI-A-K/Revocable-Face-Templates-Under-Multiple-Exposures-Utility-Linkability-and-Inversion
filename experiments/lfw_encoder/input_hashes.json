@@ -1,0 +1,14 @@
+{
+  "datasets/lfw-dataset.zip": "fff0f15b1f848f0d834f8df58ca2e3273bda21e37bd9a895acf66de60521ba10",
+  "models/det_500m.onnx": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "models/w600k_mbf.onnx": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f",
+  "models/w600k_r50.onnx": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+  "recovered_inputs/Face_Template_Overleaf_EDGE_06Oct2026.zip": "b5cc1d879a20671d7cc6dcdfd4eaa090704a0a58d5edba7821ef44768e797a59",
+  "recovered_inputs/Research IIIT- Dharwad/CFP-ENC-E04-results.zip": "cbd5ced2d7c994c8e53555c799ea07498ebca45a34a9214e8248a98253cf71a4",
+  "recovered_inputs/Research IIIT- Dharwad/LFW-E01\u2014freezing the MobileFaceNet + SCRFD configuration(3).zip": "5100018779dd6c7a35d6ebed0a4d22208b81a0cf6ec6eb0782b073a5127af8ab",
+  "recovered_inputs/Research IIIT- Dharwad/LFW-E02 Seeded RO protection templates(3).zip": "2863acac3b7955edde5d70366e433363db8513a9744828a3cb2faeb45bddd7d4",
+  "upload/CFP-ENC-E01A-results.zip": "52b8faa185f1b32b6144854c4ea55539d7dd1082f7dac48d49d9febdae0bca62",
+  "upload/CFP-ENC-E01B-results.zip": "6bd87e64f7443ce08e03f8c7e3ba093570fab1b29f18043889d4c7dba3aa9682",
+  "upload/CFP-ENC-E02-results.zip": "82b0e7392bae7803361bc4c544341b8adf1d1aa4263b2efb4baa83bcc15cae94",
+  "upload/CFP-ENC-E03-results.zip": "f342570ad698d705864ea76acbb71bb6be184e860764acd9317ecfcfb23d0fa0"
+}

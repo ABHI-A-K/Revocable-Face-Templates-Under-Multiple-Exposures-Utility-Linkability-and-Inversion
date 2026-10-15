@@ -1,0 +1,65 @@
+\documentclass[10pt,journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array}
+\usepackage{cite,flushend}
+\usepackage{placeins}
+\renewcommand{\arraystretch}{1.08}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Revocable Face Templates Under Multiple Exposures: Utility, Linkability, and Inversion},pdfauthor={Abhishek A. K.},pdfsubject={Research manuscript for author review},pdfkeywords={biometric template protection, face verification, revocation, template inversion}}
+\graphicspath{{figures/}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert_2}
+\newcommand{\unit}{\operatorname{unit}}
+\newcommand{\ASR}{\operatorname{ASR}}
+\newcommand{\FAR}{\operatorname{FAR}}
+\newcommand{\TAR}{\operatorname{TAR}}
+\newcommand{\tabnote}[1]{\par\vspace{3pt}\begin{minipage}{\linewidth}\footnotesize\raggedright #1\end{minipage}}
+\input{metrics}
+\newcommand{\fignote}[1]{\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize\raggedright #1\end{minipage}}
+% Compact float placement without stretching inter-figure white space.
+\setcounter{topnumber}{4}
+\setcounter{dbltopnumber}{4}
+\setcounter{totalnumber}{6}
+\renewcommand{\topfraction}{.90}
+\renewcommand{\dbltopfraction}{.90}
+\renewcommand{\textfraction}{.08}
+\renewcommand{\floatpagefraction}{.75}
+\renewcommand{\dblfloatpagefraction}{.75}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{12pt plus 2pt minus 2pt}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\setlength{\@dblfptop}{0pt}
+\setlength{\@dblfpsep}{12pt}
+\setlength{\@dblfpbot}{0pt plus 1fil}
+\makeatother
+\begin{document}
+\title{Revocable Face Templates Under Multiple Exposures: Utility, Linkability, and Inversion}
+\author{Abhishek A. K.\\[0.6ex]
+{\normalfont\small Department of Computer Science and Engineering, Manipal Institute of Technology,\\
+Manipal Academy of Higher Education, Manipal, India\\
+Department of Computer Science and Engineering,\\
+Indian Institute of Information Technology Dharwad, Dharwad, India}}
+\maketitle
+\begin{abstract}
+Changing a compromised face template does not necessarily remove the information revealed by its earlier versions. We examine this problem through a joint evaluation of repeated-exposure reconstruction, recognition, and compact-reference storage. The experiments apply random orthogonal, subsampled randomized Hadamard, and PCA-guided projections to frozen MobileFaceNet and ResNet50 ArcFace embeddings. Packed 128-bit and 512-bit templates occupy 16 and 64 bytes, respectively, in place of a 2048-byte raw embedding. With ten historical exposures, calibrated cross-image fresh-key attack success in the original 128-bit LFW study reaches \LfwBaselineAsr{}. In the matched screened-CFP experiment, ResNet50 achieves protected true acceptance of \RnetSmallTar{} at 128 bits and \RnetLargeTar{} at 512 bits. Its corresponding ten-exposure attack success is \RnetSmallAsr{} and \RnetLargeAsr{}, compared with \MbfSmallAsr{} and \MbfLargeAsr{} for MobileFaceNet. Reconstruction uses historical operators but has no access to the fresh operator. Conditional identity-bootstrap intervals and paired contrasts quantify uncertainty within the fixed protocols. The findings separate successful invalidation of an old record from resistance to recovery of useful identity information. They also show why compact-template selection requires recognition and security evidence alongside payload savings. On-device latency, memory, energy, and camera-level attacks are not evaluated.
+\end{abstract}
+\begin{IEEEkeywords}
+Biometric template protection, cancellable biometrics, face verification, revocation, template inversion, resource-constrained edge systems.
+\end{IEEEkeywords}
+\input{sections/01_intro}
+\input{sections/related_work}
+\input{sections/02_methods}
+\input{sections/experimental_setup}
+\input{sections/03_results}
+\input{sections/04_discussion}
+\input{sections/conclusion}
+\FloatBarrier
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

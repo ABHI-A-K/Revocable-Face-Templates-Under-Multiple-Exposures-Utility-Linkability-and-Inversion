@@ -1,0 +1,47 @@
+{
+  "bits": 256,
+  "seeds": [
+    24001,
+    24002,
+    24003,
+    24004,
+    24005,
+    24006,
+    24007,
+    24008,
+    24009,
+    24010
+  ],
+  "projection_sha256": {
+    "24001": "cec3ae5028f94c8ed49bea893b590ce701795c5d88dfe38920460ef73eca06a0",
+    "24002": "765b9ce814bd819d14ce02fb672a4e0e77713d3c84a374f850a454b8a1c97ce4",
+    "24003": "5c195e443ed596ba1784d810e17a229f8313c28a3795758a58ade28d003372ed",
+    "24004": "8190307aeb7f4f8885ef82871f9a49e8b5a8acd142ab0f914fe92926437808ff",
+    "24005": "267f98b959d49a4933e4adf05af3199ecafe6ddf0e37aebc2794701191c948cb",
+    "24006": "4053197aa84addf68e7af58fa01ed4535dc54b35c79a82daafcef49b17acdf18",
+    "24007": "f4085953f5d273482a4b4e677884d6e15b3624a921c53769e02f50c31ad100e2",
+    "24008": "246c68c7262851931c1a86f45ee6e400d03ec8e61795b4b48622fca028100bb3",
+    "24009": "e72c4577dd16e7e70a1646d3358f2be0d32fa701cfa0cb0d9d99130217d1989f",
+    "24010": "53ace4a2a9515ccc1591955d39e567afd05d21cf88fc5eacd17a91ba93b1f8ac"
+  },
+  "matrix_layout": "independent 512 x d row-major Gaussian for each dimension; not nested",
+  "binarization": ">=0",
+  "bitorder": "big",
+  "input_cache_audit": {
+    "pair_embedding_shape": [
+      14000,
+      512
+    ],
+    "unique_embedding_shape": [
+      5890,
+      512
+    ],
+    "pair_embeddings_sha256": "a899bf866695c2e470d4ec039b2918dbc764c5c44955241fd62ff93c6c8d6824",
+    "pair_metadata_sha256": "f48c7105ab3350f559a691988dcfbbae49087c334e8db8bb4a76225feb893e03",
+    "unique_embeddings_sha256": "64f7d0cd7f7bbe220ca3c90617600428574b045766db30c9b8e3c09df70a80d8",
+    "unique_metadata_sha256": "a51356cc2270b058734a01ed7d7ae74fb6f56b018548288a49a03c4f8e5d9e54",
+    "l2_normalized": true,
+    "fold_protocol_valid": true,
+    "occurrence_to_unique_mapping_valid": true
+  }
+}

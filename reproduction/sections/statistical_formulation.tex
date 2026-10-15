@@ -1,0 +1,25 @@
+
+Let $r_{i,s,c}$ be the acceptance fraction for identity $i$ in split or fold $s$ and configuration $c$, after averaging its prescribed repeated trials. When per-identity trial counts are equal, the reported estimator is
+\begin{equation}
+ \hat\theta_c=\frac1S\sum_{s=1}^S\frac1{n_s}\sum_{i\in\mathcal U_s}r_{i,s,c}.
+\end{equation}
+More generally, the implementation uses sample-weighted rates within each split, then gives splits equal weight. A bootstrap draw assigns global multiplicities
+\begin{equation}
+ (w_1^{(b)},\ldots,w_U^{(b)})\sim
+ \operatorname{Multinomial}(U;1/U,\ldots,1/U).
+\end{equation}
+For trial outcome $Y_{t,c}$ and trial identity $i(t)$, its split contribution becomes
+\begin{equation}
+ \hat\theta_{s,c}^{(b)}=
+ \frac{\sum_{t\in\mathcal T_s}w_{i(t)}^{(b)}Y_{t,c}}
+ {\sum_{t\in\mathcal T_s}w_{i(t)}^{(b)}}.
+\label{eq:bootstrap}
+\end{equation}
+An identity retains its sampled multiplicity across overlapping CFP partitions, keys, and directions. Genuine pairs receive the identity weight; an impostor pair between $i$ and $j$ receives $w_i^{(b)}w_j^{(b)}$. The 2.5th and 97.5th percentiles of the 2000 replicate estimates form the empirical 95\% interval. Retaining shared weights accounts for repeated observations more faithfully than an analysis that treats each decision as an independent Bernoulli trial.
+
+Paired contrasts reuse the same draw on both sides:
+\begin{align}
+ \Delta_{\rm enc}^{(b)}&=\hat\theta_{\rm R50}^{(b)}-\hat\theta_{\rm MBF}^{(b)},\\
+ \Delta_K^{(b)}&=\hat\theta_{K=10}^{(b)}-\hat\theta_{K=1}^{(b)}.
+\end{align}
+Contrasts in rate metrics are reported as $100\Delta$ percentage points. Non-overlap of two marginal intervals is not used as a substitute for a paired contrast. All intervals are pointwise and conditional on fitted models, partitions, selected images, keys, and validation thresholds; they do not account for model refitting or multiplicity. A degenerate empirical interval is not evidence of population certainty.

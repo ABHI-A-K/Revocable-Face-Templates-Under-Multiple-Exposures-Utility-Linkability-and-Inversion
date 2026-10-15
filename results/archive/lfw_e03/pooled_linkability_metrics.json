@@ -1,0 +1,16 @@
+{
+  "samples": 119300,
+  "mated_samples": 59620,
+  "non_mated_samples": 59680,
+  "raw_auc": 0.5020237666975743,
+  "attacker_auc": 0.5020237666975743,
+  "attacker_direction": "high_score_is_mated",
+  "auc_linkability_index": 0.004047533395148628,
+  "d_sys_omega_1_nbins_100": 0.006489701558323147,
+  "mated_mean": 0.5000107451358604,
+  "mated_std": 0.0443300804753317,
+  "non_mated_mean": 0.4996779700067024,
+  "non_mated_std": 0.044138999868337594,
+  "signed_mean_gap": 0.000332775129158025,
+  "absolute_mean_gap": 0.000332775129158025
+}

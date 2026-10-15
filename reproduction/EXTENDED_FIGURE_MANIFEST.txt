@@ -1,0 +1,8 @@
+cfp_recognition_ci
+lfw_recognition_sd
+paired_encoder_effects
+paired_exposure_effects
+reconstruction_quality
+linkage_comparison
+storage_scaling
+methodology

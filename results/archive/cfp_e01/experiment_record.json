@@ -1,0 +1,152 @@
+{
+  "experiment_id": "CFP-FP-E01-R4-aligned-baseline",
+  "pipeline_revision": "R4",
+  "title": "Frozen MobileFaceNet aligned CFP-FP verification baseline",
+  "researcher": "Abhishek A K",
+  "institution": "IIIT Dharwad / MIT Manipal",
+  "run_started_utc": "2026-09-03T06:28:46.727302+00:00",
+  "run_completed_utc": "2026-09-03T06:29:33.761031+00:00",
+  "purpose": "Measure the frozen MobileFaceNet recognition baseline on the standard aligned CFP-FP frontal-to-profile verification package after raw preprocessing transfer failed.",
+  "hypothesis": "Extreme pose will reduce recognition utility relative to LFW, while complete aligned input coverage will permit a valid benchmark independent of raw face-detection failure.",
+  "dataset": {
+    "path": "/kaggle/working/cfp_fp_verified_source/cfp_fp.bin",
+    "source_kind": "huggingface:Icar/val_sets@1f7800d9d5ba295554573a4e292e870b64a49b74",
+    "size_bytes": 76267779,
+    "sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+    "published_fallback_sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+    "pairs": 7000,
+    "encoded_pair_sides": 14000,
+    "genuine_pairs": 3500,
+    "impostor_pairs": 3500,
+    "folds": 10,
+    "fold_rule": "contiguous official order: 700 pairs per fold"
+  },
+  "recognition_pipeline": {
+    "model_pack": "buffalo_sc",
+    "recognizer": "MobileFaceNet w600k_mbf",
+    "model_sha256": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f",
+    "input": "pre-aligned 112x112 BGR decoded from cfp_fp.bin",
+    "embedding_dimension": 512,
+    "l2_normalization": true,
+    "flip_augmentation": false,
+    "similarity": "cosine",
+    "session_providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "operating_system": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "gpu": "Tesla T4",
+    "pytorch_cuda_available": true,
+    "pytorch_cuda_build": "12.8",
+    "cudnn_version": 91002,
+    "onnxruntime_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "packages": {
+      "numpy": "2.0.2",
+      "pandas": "2.3.3",
+      "opencv-python": "4.13.0.92",
+      "Pillow": "11.3.0",
+      "scikit-learn": "1.6.1",
+      "matplotlib": "3.10.0",
+      "onnx": "1.22.0",
+      "onnxruntime-gpu": "1.26.0",
+      "insightface": "1.0.1"
+    }
+  },
+  "embedding_extraction": {
+    "pair_side_images": 14000,
+    "valid_embeddings": 14000,
+    "coverage": 1.0,
+    "unique_encoded_images": 5890,
+    "embedding_dimension": 512,
+    "batch_size": 256,
+    "seconds": 16.604899559000046,
+    "mean_ms_per_pair_side": 1.186064254214289
+  },
+  "prior_raw_transfer_diagnostic": {
+    "R1_image_coverage": 0.0573,
+    "R2_image_coverage": 0.4766,
+    "R3_image_coverage": 0.497,
+    "interpretation": "raw detector/alignment transfer failure; not a MobileFaceNet recognition score"
+  },
+  "evaluation": {
+    "boundary": "recognition-only aligned CFP-FP benchmark",
+    "threshold_training": "nine folds only; held-out fold used only for testing",
+    "target_training_far": 0.001,
+    "failure_rule": "block all metrics unless all 14,000 pair-side images decode and embed",
+    "test_fold_far_granularity": 0.002857142857142857
+  },
+  "results": {
+    "accuracy": [
+      {
+        "evaluation": "aligned_benchmark",
+        "evaluated_pairs": 7000,
+        "mean_threshold": 0.1601315558,
+        "threshold_std": 0.0041033766,
+        "mean_fold_accuracy": 0.9577142857,
+        "fold_accuracy_std": 0.0126741832,
+        "pooled_accuracy": 0.9577142857,
+        "pooled_tar": 0.9297142857,
+        "pooled_far": 0.0142857143,
+        "pooled_frr": 0.0702857143,
+        "tp": 3254,
+        "tn": 3450,
+        "fp": 50,
+        "fn": 246
+      }
+    ],
+    "roc_eer": [
+      {
+        "evaluation": "aligned_benchmark",
+        "pairs": 7000,
+        "genuine_pairs": 3500,
+        "impostor_pairs": 3500,
+        "auc": 0.9737883265,
+        "eer": 0.0551428571,
+        "eer_threshold": 0.1178687662,
+        "genuine_mean": 0.383033373,
+        "genuine_std": 0.1391199016,
+        "impostor_mean": 0.0140103864,
+        "impostor_std": 0.0635903462,
+        "mean_fold_auc": 0.9738881633,
+        "fold_auc_std": 0.0132324038,
+        "mean_fold_eer": 0.0554285714,
+        "fold_eer_std": 0.0159477605
+      }
+    ],
+    "tar_at_far_1e-3": [
+      {
+        "evaluation": "aligned_benchmark",
+        "target_training_far": 0.001,
+        "evaluated_pairs": 7000,
+        "genuine_pairs": 3500,
+        "impostor_pairs": 3500,
+        "mean_threshold": 0.2314036399,
+        "threshold_std": 0.0029379537,
+        "pooled_tar": 0.8771428571,
+        "pooled_observed_far": 0.0014285714,
+        "pooled_frr": 0.1228571429,
+        "mean_fold_tar": 0.8771428571,
+        "fold_tar_std": 0.0240181337,
+        "test_far_granularity_approx": 0.0028571429,
+        "tp": 3070,
+        "tn": 3495,
+        "fp": 5,
+        "fn": 430
+      }
+    ]
+  },
+  "limitations": [
+    "R4 does not measure raw-image face detection or end-to-end operational acceptance.",
+    "The aligned-bin package does not provide verified identity labels or original filenames.",
+    "The R4 cache alone is therefore not sufficient for identity-disjoint E05-ID or identity-grouped E07.",
+    "The FAR target is trained on nine folds; each held-out fold has only 350 impostor pairs.",
+    "No flip augmentation is used, matching the frozen no-augmentation decision for this project."
+  ]
+}

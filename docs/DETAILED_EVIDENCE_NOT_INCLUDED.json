@@ -1,0 +1,10 @@
+{
+  "reason": "Large trial-level logs excluded from compact GitHub download; curated manuscript results remain included",
+  "paths": [
+    "results/archive/lfw_e07/per_image_inversion_results.csv.gz",
+    "results/archive/cfp_e07/per_identity_attacks.csv.gz",
+    "results/archive/cfp_e04/CFP-E04-REV-results/revoked_scores_128.csv.gz",
+    "results/archive/cfp_e04/CFP-E04-REV-results/revoked_scores_512.csv.gz",
+    "results/archive/lfw_e05/results/cumulative_attack_out_of_fold_scores.csv.gz"
+  ]
+}

@@ -1,0 +1,1 @@
+CFP-FP-E05-ID-SUBSET	Does multi-key exposure reveal identity on held-out people?	Macro rank-1; raw / untrained controls; 512 and 128 bits	512-bit ridge macro rank-1: K=1: 96.33%; K=2: 96.33%; K=5: 97.15%; K=10: 97.26%	Known-key screened-subset experiment; not full CFP-FP benchmark

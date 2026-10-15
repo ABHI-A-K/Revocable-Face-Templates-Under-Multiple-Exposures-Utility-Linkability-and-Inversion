@@ -1,0 +1,2 @@
+Experiment,Main question,Important metric,Actual result,Simple interpretation
+CFP-FP-E01-R4,Frozen MobileFaceNet recognition under frontal-to-profile pose after standard alignment,TAR@FAR 0.1%; EER; AUC; mean fold accuracy,TAR 87.714%; EER 5.514%; AUC 97.379%; accuracy 95.771%,Valid aligned recognition baseline; raw detector transfer remains a separate failure result.

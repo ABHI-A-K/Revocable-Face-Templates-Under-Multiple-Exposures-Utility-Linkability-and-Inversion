@@ -1,0 +1,2 @@
+raw_embedding_bytes_per_template,protected_packed_bytes_per_template,storage_reduction_factor,benchmark_batch_size,transform_latency_ms_per_template_p50,transform_latency_ms_per_template_p95,latency_note
+2048,8,256.0,256,0.0004464238281265409,0.0007117021477931477,NumPy batch projection plus sign binarization on the current runtime; excludes embedding extraction.

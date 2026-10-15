@@ -1,0 +1,2 @@
+evaluation,target_training_far,evaluated_pairs,genuine_pairs,impostor_pairs,mean_threshold,threshold_std,pooled_tar,pooled_observed_far,pooled_frr,mean_fold_tar,fold_tar_std,test_far_granularity_approx,tp,tn,fp,fn
+aligned_benchmark,0.001,7000,3500,3500,0.23140363991260532,0.0029379536613016455,0.8771428571428571,0.0014285714285714286,0.12285714285714286,0.8771428571428572,0.024018133738892375,0.002857142857142857,3070,3495,5,430

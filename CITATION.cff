@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this artifact and the accompanying manuscript. Add the repository URL and final release DOI before publication."
+title: "Revocable Face Templates Under Multiple Exposures: Utility, Linkability, and Inversion - Reproduction Materials"
+authors:
+  - family-names: "A. K."
+    given-names: "Abhishek"
+version: "0.1.0-preparation"
+date-released: "2026-10-14"
+type: software

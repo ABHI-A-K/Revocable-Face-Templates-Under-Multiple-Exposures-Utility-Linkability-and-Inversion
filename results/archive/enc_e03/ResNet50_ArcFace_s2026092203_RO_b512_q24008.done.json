@@ -1,0 +1,74 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E03",
+    "revision": "E03-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "CFP E07 mean signed backprojection and diagonal calibration; denominator floor 1e-8",
+    "targets": "one frontal/profile image per person; seeds +100/+200",
+    "pca_inverse": "training-only mean projected norm",
+    "fresh_key": "excluded from attacker inputs; applied only by verifier"
+  },
+  "files": {
+    "evidence/ResNet50_ArcFace_s2026092203_RO_b512_q24008_attacks.csv.gz": "2752f28a96d791a57b6afc64d58c6c24160b0a3280b8d4f3b17f454d71a2fcd8",
+    "evidence/ResNet50_ArcFace_s2026092203_RO_b512_q24008_calibration.npz": "b114260a961cea1b10a2d7e5b0de15c77f37558e132bcf47abf17f38731962d7",
+    "results/ResNet50_ArcFace_s2026092203_RO_b512_q24008_summary.csv": "a8483ce9865c186dd3ad4d189b38a4f9d8b35654d29fbfe98196b28b598190fd"
+  }
+}

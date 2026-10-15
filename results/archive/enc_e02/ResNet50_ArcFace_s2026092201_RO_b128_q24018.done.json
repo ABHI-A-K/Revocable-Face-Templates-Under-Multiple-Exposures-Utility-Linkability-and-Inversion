@@ -1,0 +1,75 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E02",
+    "revision": "E02-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "StandardScaler + LogisticRegression C=1 liblinear tol=1e-4 max_iter=2000 random_state=0",
+    "replay": "all ordered different-key transitions; same image and cross-image both directions"
+  },
+  "files": {
+    "results/ResNet50_ArcFace_s2026092201_RO_b128_q24018_replay.csv": "943cce1ffa734e8f199074c079792fcd9208013e99f490e0f0b83860fd3d8cf5",
+    "evidence/ResNet50_ArcFace_s2026092201_RO_b128_q24018_replay.npz": "f65c2cc4f32453d6d95a92a253a9622ec752ac0c411642b028e2bea8c2d07dcc",
+    "evidence/ResNet50_ArcFace_s2026092201_RO_b128_q24018_replay_index.json": "13aa21422deda010544f8ba97bf36a590ef94ac4b80404b02f9d0121ab7c1dfa",
+    "results/ResNet50_ArcFace_s2026092201_RO_b128_q24018_linkage.csv": "76a4e1978e104f5dc553dd8879fcebbe3c282e8d26cd700bcefc70152ef97fc6",
+    "evidence/ResNet50_ArcFace_s2026092201_RO_b128_q24018_linkage.npz": "c3a47120f6817dbff3b20cbc3ef732259163e3ad6390d10e31e282a503fb8569",
+    "evidence/ResNet50_ArcFace_s2026092201_RO_b128_q24018_linkage_index.json": "9642a8071c93a529e54902f3464dba06fd23f6cfc4894e012522ff45021109c9"
+  }
+}

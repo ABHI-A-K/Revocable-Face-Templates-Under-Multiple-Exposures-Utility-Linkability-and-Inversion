@@ -1,0 +1,3 @@
+encoder,coverage,unique_crops,pair_sides,newly_computed,extraction_seconds_this_run,checkpoint_bytes,raw_embedding_bytes
+MobileFaceNet,1.0,5890,14000,5890,6.912944092999965,13616099,2048
+ResNet50_ArcFace,1.0,5890,14000,5890,14.626270735000048,174383860,2048

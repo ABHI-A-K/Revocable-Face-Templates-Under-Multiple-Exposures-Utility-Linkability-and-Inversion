@@ -1,0 +1,90 @@
+[
+  {
+    "file": "READ_ME.md",
+    "sha256": "e3fcf43dfcaed4e76d72fb8843322f2a5d43be3f4b84f60a1d19aba69bb94713"
+  },
+  {
+    "file": "audit_summary.json",
+    "sha256": "523ea6b8c85575fe36a9c2b87fce8c53403cf9e923eb4f1754b1c89866d5b0c6"
+  },
+  {
+    "file": "candidate_mapping.csv",
+    "sha256": "56644ae5312fb3478e5001f01ac5524c1bd387c189fe1ccb8a81ed5f53b8c182"
+  },
+  {
+    "file": "check.py",
+    "sha256": "0b260ea54d888e8d562232f4b708713be78bfa2c13ff0b951db167afba0864b1"
+  },
+  {
+    "file": "controls.py",
+    "sha256": "9a0d93e01b503ba1d8d972f7e955fe82fb939a8ae4919ce96f718929b1fe7070"
+  },
+  {
+    "file": "final_correspondence_status.csv",
+    "sha256": "3a4b1f4e6be7e7f1579b9259f16aa9ebec9d16765e87c5e97bdde36cd4355a0f"
+  },
+  {
+    "file": "frozen_subset.csv",
+    "sha256": "293fe65ab03fe4d0709cbe062b2aa22d95dd933adaaaaedcb38fef43cbe1698b"
+  },
+  {
+    "file": "historical_READ_ME_before_review.md",
+    "sha256": "dac355ef0f561671896c6d16aca045c075cc6e572841355072e5d81a7ef3064f"
+  },
+  {
+    "file": "human_review_confirmation.json",
+    "sha256": "3ae085776be309d89ea0e2be879f00f8ae86d20badce05c55efc20a11427e926"
+  },
+  {
+    "file": "identity_partitions.csv",
+    "sha256": "2334f8ee56e733e0f23154b70ec305e7c8b18d902b66b1377b2e34539ee0f93f"
+  },
+  {
+    "file": "independent_sift_affine.csv",
+    "sha256": "52f2f04cbfe4365a17f90d6c650ec986fa59a2e3d92167433eacb337ab3e30da"
+  },
+  {
+    "file": "negative_controls.csv",
+    "sha256": "aff939b0b4d9be62d54d0c3c0291131eeafe508d4e3d7fa115ec6cea73e54c3d"
+  },
+  {
+    "file": "package.py",
+    "sha256": "17dc2ae9edab8c754b29ef787b54181adfc2ed303052afa3199f9194c4011b25"
+  },
+  {
+    "file": "refine.py",
+    "sha256": "30a93f32c8e054456e58d3763428fabf4bb7f2463c24b719eec48bc9b97a0064"
+  },
+  {
+    "file": "review_26_photographic_pairs.html",
+    "sha256": "ed442675ddb87ecc937abc59d981461415baf703689e72cf6c6191eb0b534a35"
+  },
+  {
+    "file": "review_decisions.csv",
+    "sha256": "25ce93254112350ebf756660c7a08ff80b9d225ea8843b87677603fc9ef957df"
+  },
+  {
+    "file": "review_required_26.csv",
+    "sha256": "040fa28fe4e7ca667bf57605e8051250d86f2e1c4d34ab58d77e0279eae0775a"
+  },
+  {
+    "file": "source_content_inventory.csv",
+    "sha256": "69ed3fc5e60e0646eb210a083d18198f8e66b70d86e94307ea04d352999c3f14"
+  },
+  {
+    "file": "submitted_review_before_confirmation.csv",
+    "sha256": "bb91350372b70d35c031b94b05199f71d1c212921ba3388f4640ad5a9c238d2e"
+  },
+  {
+    "file": "supplemental_ecc.csv",
+    "sha256": "4e1fc0d4205b0faa03b35a56f3843d15bde0b18ef26a0daadd08091fca2175b5"
+  },
+  {
+    "file": "tracker_row.tsv",
+    "sha256": "4eaef433a1a1f90dbb24232dd09a9efe409ac0c71d5ba95de616fdbef7b17106"
+  },
+  {
+    "file": "unresolved_partition_impact.csv",
+    "sha256": "f5e767269fc6f5069e95319ab018356b84866b96eff29d4d8f55c6cbd0887547"
+  }
+]

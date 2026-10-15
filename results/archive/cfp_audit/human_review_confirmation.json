@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-24",
+  "reviewer": "Abhishek A K",
+  "confirmation": "Yes, all 26 are SAME_SOURCE",
+  "source": "Explicit user confirmation in conversation after review CSV upload",
+  "scope": "Photographic correspondence for the 26 flagged crops; not independent identity certification",
+  "submitted_csv_sha256": "bb91350372b70d35c031b94b05199f71d1c212921ba3388f4640ad5a9c238d2e",
+  "decision_changes": 26,
+  "mapping_changes": 0,
+  "rerun_required_for_this_review": false
+}

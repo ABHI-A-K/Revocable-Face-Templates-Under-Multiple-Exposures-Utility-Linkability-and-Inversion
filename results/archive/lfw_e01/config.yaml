@@ -1,0 +1,57 @@
+# LFW-E01 frozen experimental configuration
+
+experiment:
+  id: "LFW-E01"
+  title: "Raw MobileFaceNet verification baseline on LFW"
+  created_at: "2026-08-11 02:48:51"
+
+dataset:
+  name: "Labeled Faces in the Wild"
+  variant: "deep-funnelled"
+  protocol: "pairs.csv"
+  folds: 10
+  pairs_per_fold: 600
+  genuine_pairs_per_fold: 300
+  impostor_pairs_per_fold: 300
+
+face_detection:
+  architecture: "SCRFD-500MF"
+  model_file: "det_500m.onnx"
+  sha256: "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+  detection_threshold: 0.50
+  detection_size: [640, 640]
+  multiple_face_rule: "select face with largest bounding-box area"
+  no_face_rule: "record as detection failure"
+
+face_recognition:
+  architecture: "MobileFaceNet"
+  training_set: "WebFace600K"
+  model_file: "w600k_mbf.onnx"
+  sha256: "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f"
+  aligned_input_size: [112, 112]
+  embedding_dimension: 512
+  embedding_normalization: "L2"
+  similarity_measure: "cosine similarity"
+
+evaluation:
+  threshold_selection: "learn on nine folds and test on the held-out fold"
+  metrics:
+    - "AUC"
+    - "EER"
+    - "accuracy"
+    - "FMR"
+    - "FNMR"
+    - "detection failure rate"
+  biohashing_included: false
+
+runtime:
+  python: "3.12.13"
+  insightface: "1.0.1"
+  onnxruntime: "1.28.0"
+  provider_priority:
+    - "CUDAExecutionProvider"
+    - "CPUExecutionProvider"
+  gpu: "Tesla T4"
+
+reproducibility:
+  random_seed: 2026

@@ -1,0 +1,15 @@
+{
+  "conclusion": "REVOCATION_WEAKNESS_OBSERVED",
+  "worst_current_version_matcher_only_tar": 0.7950352230795035,
+  "pooled_revoked_template_acceptance_rate": 0.0004696410600469641,
+  "worst_transition_revoked_template_acceptance_rate": 0.0010063737001006373,
+  "pooled_version_gate_rejection_rate": 1.0,
+  "worst_absolute_renewal_tar_change": 0.05635692720563579,
+  "guardrail_checks": {
+    "current_version_tar_pass": false,
+    "matcher_fallback_revocation_pass": true,
+    "renewal_tar_stability_pass": false,
+    "version_gate_pass": true
+  },
+  "scope": "One revocation event on LFW, five fixed RO keys, 128-bit templates."
+}

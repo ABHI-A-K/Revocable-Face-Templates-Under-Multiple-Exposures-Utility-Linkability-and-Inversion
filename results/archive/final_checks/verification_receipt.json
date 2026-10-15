@@ -1,0 +1,9 @@
+{
+  "threshold_records": 1815,
+  "matcher_intervals": 70,
+  "attack_intervals": 288,
+  "original_operating_points": 363,
+  "validation_threshold_budget_pass": true,
+  "monotonicity_pass": true,
+  "asr_baseline_reproduction_pass": true
+}

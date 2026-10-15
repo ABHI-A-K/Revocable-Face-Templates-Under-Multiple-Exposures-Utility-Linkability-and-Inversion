@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{LFW official-pair recognition: encoder comparison.}
+\label{tab:encoder-lfw}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+& \multicolumn{2}{c}{TAR (\%)} & \multicolumn{2}{c}{FAR (\%)} \\
+Method & MBF & R50 & MBF & R50 \\
+\midrule
+Raw & 98.66 & 99.03 & 0.101 & 0.101 \\
+RO & 82.99 & 92.28 & 0.094 & 0.080 \\
+SRHT & 84.48 & 92.10 & 0.094 & 0.094 \\
+PCA-guided RO & 85.22 & 94.66 & 0.087 & 0.094 \\
+\bottomrule
+\end{tabular}
+\tabnote{Matcher-only evaluation uses 5965 valid pairs, with thresholds fitted on the other nine folds at a 0.1\% FAR target. Protected templates have 128 bits; rates average five fixed keys. MBF: MobileFaceNet; R50: ResNet50 ArcFace. The full 6000-pair operational results are retained in the evidence. Fold-specific PCA excludes held-out identities from fitting.}
+\end{table}

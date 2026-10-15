@@ -1,0 +1,2 @@
+evaluation,evaluated_pairs,mean_threshold,threshold_std,mean_fold_accuracy,fold_accuracy_std,pooled_accuracy,pooled_tar,pooled_far,pooled_frr,tp,tn,fp,fn
+aligned_benchmark,7000,0.16013155579566957,0.004103376579423068,0.9577142857142856,0.012674183233444308,0.9577142857142857,0.9297142857142857,0.014285714285714285,0.07028571428571428,3254,3450,50,246

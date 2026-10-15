@@ -1,0 +1,1 @@
+CFP-ENC-E01A	CFP-FP official aligned; paired raw encoders	PASS	7000 pairs; 14000 pair sides; 5890 unique crops	MBF TAR 87.7143%; observed FAR 0.1429%	R50 TAR 94.8857%; observed FAR 0.1429%	Training FAR target 0.1%; 9/1 folds; raw cosine; 2048 B; protection pending

@@ -1,0 +1,75 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E02",
+    "revision": "E02-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "StandardScaler + LogisticRegression C=1 liblinear tol=1e-4 max_iter=2000 random_state=0",
+    "replay": "all ordered different-key transitions; same image and cross-image both directions"
+  },
+  "files": {
+    "results/MobileFaceNet_s2026092201_SRHT_b512_q24014_replay.csv": "b13ecf555052be4ea36039138bd3d19cf82386faf093c40dabb230816f0dad40",
+    "evidence/MobileFaceNet_s2026092201_SRHT_b512_q24014_replay.npz": "1fe0433f82c470d42ac2623da5534228a53ee6159f8b2fdb7ec491dc5d9c53c2",
+    "evidence/MobileFaceNet_s2026092201_SRHT_b512_q24014_replay_index.json": "93a6de0d4ed755989c5b58b24a48b735d53d30d48f2b237bd1af5643c1edf86e",
+    "results/MobileFaceNet_s2026092201_SRHT_b512_q24014_linkage.csv": "5f3c3b2b78775c5b7e90bbcca85e89ecb8edf1a7b7b8738ac34c51ccef4c462d",
+    "evidence/MobileFaceNet_s2026092201_SRHT_b512_q24014_linkage.npz": "ae9a0a4884d0819e4a985cb62ca064867a2b1282d6e1e6d283a656ee95d8eb99",
+    "evidence/MobileFaceNet_s2026092201_SRHT_b512_q24014_linkage_index.json": "b41744bd9f8ac17849366867ebbe4d530a2d64d0d1760d7c4bbcc4ca1b1d6454"
+  }
+}

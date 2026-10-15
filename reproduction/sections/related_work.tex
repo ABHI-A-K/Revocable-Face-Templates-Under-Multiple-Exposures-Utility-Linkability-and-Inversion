@@ -1,0 +1,46 @@
+\section{Related Work}\label{sec:related}
+
+DeepFace and FaceNet established the value of alignment and learned representations for face recognition~\cite{deepface,facenet}. Later margin-based objectives, including SphereFace, CosFace, and ArcFace, strengthen identity separation in angular or cosine space~\cite{sphereface,cosface,arcface}. MagFace relates feature magnitude to image quality, while AdaFace uses a feature-norm quality estimate to adapt its margin~\cite{magface,adaface}. These advances concern recognition; they do not directly restrict misuse of a disclosed embedding.
+
+MobileFaceNets were developed for efficient mobile face verification~\cite{chen2018mobilefacenet}. SCRFD addresses efficient face detection~\cite{guo2021scrfd}. These studies motivate the baseline extraction pipeline, but their published efficiency does not establish the resource cost of the complete system evaluated here. LFW provides unconstrained verification images, while CFP tests frontal-to-profile matching~\cite{huang2007lfw,sengupta2016cfp}. Official pairs support recognition reporting; learned attacks need separate training and test identities.
+
+
+Ratha et al. introduced cancellable transformations as a way to replace biometric references and later developed fingerprint constructions~\cite{ratha2001enhancing,ratha2007cancelable}. BioHashing combines biometric features with token-derived randomness, while Index-of-Max hashing stores indices from randomized comparisons~\cite{teoh2004biohashing,iom2018}. Security interpretation depends on whether the attacker also obtains the transformation parameters.
+
+Several face-specific methods use different representations. IronMask uses real-valued error-correcting codes, and PolyProtect applies user-specific polynomial mappings~\cite{ironmask,polyprotect}. MLP-Hash uses random multilayer transformations, while FaceCloak learns renewable binary representations~\cite{mlphash,facecloak}. These methods are relevant alternatives, but their implementations are not evaluated here. Results from different constructions and operating points should not be treated as a direct security ranking.
+
+The unlinkability framework of Gomez-Barrero et al. evaluates distributions of matching and non-matching scores~\cite{gomezbarrero2018unlinkability}. Its interpretation depends on the chosen score. A near-chance result for one score does not rule out another linkage attack. Surveys by Krivoku\'{c}a Hahn and Marcel and by Rathgeb and Uhl distinguish recognition, unlinkability, and irreversibility~\cite{hahn2022survey,rathgeb2011survey}. The deep-template benchmark extends common evaluation criteria across several biometric modalities~\cite{benchmark2026}. These works support reporting several protection properties rather than one security measure.
+
+
+Mai et al. reconstructed face images from deep templates and distinguished source-image evaluation from evaluation against another photograph of the same person~\cite{mai2019reconstruction}. Vec2Face and the foundation-model adapter also produce facial images from features~\cite{vec2face,shahreza2024adapter}. The present study instead reconstructs an embedding and submits it to a digital matching interface. These endpoints have different assumptions and success measures.
+
+Wang et al. use algorithmic constraints for pre-image attacks on BioHashing and Index-of-Max hashing~\cite{wang2021csa}. Li and Hu show that multiple cancellable fingerprint records and known transformations can reveal the original template~\cite{li2014multiplicity}. Signed-measurement results by Plan and Vershynin and by Jacques et al. explain why signs can preserve recoverable directional information~\cite{plan2013,jacques2013}. Their mathematical assumptions do not establish a recovery guarantee for the face features tested here.
+
+
+Recent evidence strengthens the need to separate recognition utility from compromise resistance. Shahreza et al.~\cite{shahreza2024vulnerability} evaluate image reconstruction against 31 recognition models with different structures and losses. Shahreza and Marcel~\cite{shahreza2024synthetic} train inversion using synthetic faces and evaluate attacks on real recognition systems, including digital replay. These studies demonstrate image-level attack endpoints; the present experiment measures embedding-input acceptance and cannot inherit their presentation-attack conclusions.
+
+Dong et al.~\cite{dong2024risk} analyze pre-image and cross-transformation attacks through distance preservation. Their findings motivate evaluating acceptance after transformation changes, while the present protocol specifically withholds the fresh operator and varies the number of historical records. Gao et al.~\cite{gao2024walsh} investigate partial Walsh transformations and Simhash for protected face templates. Their method provides a relevant structured-transform comparison in the literature, but it is not identical to the SRHT implementation evaluated here.
+
+Ng et al.~\cite{ng2025flexible} develop an adversarial hashing framework for protected face-periocular recognition. Kim et al.~\cite{kim2025idface} instead use homomorphic encryption and specialized representations for efficient protected identification. These constructions address distinct modalities, trust assumptions, and matching interfaces. They are included to position the study, not to infer superiority from incompatible published operating points. In particular, compact binary payloads and encrypted-database search have different cost models.
+
+
+Against this background, the present evaluation concentrates on three projection families under a common set of questions. It relates exposure count and template length to fresh-key acceptance, compares two frozen encoders on CFP, and quantifies the associated payload. Tables~\ref{tab:review1}--\ref{tab:review3} cover the original 30 reviewed works, including surveys and the dataset report; Table~\ref{tab:recent} adds six recent publications. Two standards supply terminology and are excluded from the research-study count.
+\input{sections/review_tables}
+
+Table~\ref{tab:priorcomparison} compares the scope of selected studies with the present evaluation.
+\input{sections/prior_work_table}
+
+\begin{table*}[t]
+\caption{Additional recent publications and their relationship to the present evaluation.}
+\label{tab:recent}\centering\small
+\begin{tabularx}{\textwidth}{@{}p{3.3cm}p{4.7cm}X@{}}\toprule
+Study and venue & Main contribution & Relationship and comparison boundary\\\midrule
+Shahreza et al., TIFS 2024~\cite{shahreza2024vulnerability} & Inversion evaluation across 31 face-recognition models & Supports encoder-aware attack assessment; reconstructs images rather than protected-sign backprojections.\\
+Shahreza and Marcel, TBIOM 2024~\cite{shahreza2024synthetic} & Synthetic-data training for template inversion & Extends inversion to image and replay endpoints not tested here.\\
+Dong et al., JKSUCIS 2024~\cite{dong2024risk} & Distance-preservation and cross-transformation attack analysis & Motivates separating transform renewal from recovery resistance.\\
+Gao et al., TIFS 2024~\cite{gao2024walsh} & Partial Walsh transformations and Simhash & Relevant structured-template construction; not a rerun baseline.\\
+Ng et al., TIFS 2025~\cite{ng2025flexible} & Protected face-periocular hash learning & Uses a different multimodal protection mechanism and training objective.\\
+Kim et al., ICCV 2025~\cite{kim2025idface} & Efficient identification over encrypted face templates & Complementary cryptographic design with a different cost and trust model.\\\bottomrule
+\end{tabularx}
+\tabnote{The comparison concerns scope and assumptions; external systems were not rerun.}
+\end{table*}

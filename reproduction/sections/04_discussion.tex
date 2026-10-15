@@ -1,0 +1,28 @@
+\section{Discussion}\label{sec:discussion}
+
+
+Rejecting an obsolete reference and resisting reconstruction are different outcomes in these experiments. The renewed matcher seldom accepts unchanged old bits, yet an estimate formed from historical templates and their operators can be accepted under an unexposed key. The paired contrasts between one and ten records show that repeated exposure supplies additional useful information within the evaluated protocols.
+
+The relatively weak template-only linkage signal is consistent with the narrower information available to that attacker. Known-operator inversion exploits constraints that the linkage model cannot observe. A near-chance linkage score therefore offers little support for an irreversibility claim under operator compromise. Any security interpretation must specify both the exposed information and the interface through which an attack is submitted.
+
+
+Every protected configuration in the matched CFP experiment achieves higher genuine acceptance with ResNet50. Fresh-key attack acceptance also increases at ten exposures, and all six paired encoder-difference intervals exclude zero on the positive side. The recognition gain does not resolve the reconstruction weakness observed for these projections. LFW provides additional evidence of improved recognition, but the available LFW attacks remain limited to MobileFaceNet.
+
+These differences apply to the two evaluated checkpoints. Architecture, training data, and loss were not varied independently, and each encoder uses its own validation threshold. Moreover, the comparison does not hold genuine TAR exactly constant. The evidence therefore supports a conclusion about these pipelines, rather than a general association between recognition accuracy and insecurity.
+
+
+The storage comparison gives a practical scale to the utility and security findings. For either encoder, storing a protected reference requires 16 or 64 bytes in place of a 2048-byte raw embedding. The equality of the two encoders' raw dimensions and protected lengths makes these payload savings directly comparable. They may matter for an edge device retaining many identities, although they say nothing by themselves about the rest of the system's memory requirement.
+
+The 128-bit choice saves more storage but rejects more genuine comparisons. ResNet50 TAR on screened CFP rises from \RnetSmallTar{} at 128 bits to \RnetLargeTar{} at 512 bits; the longer representation also permits substantial reconstruction success. Selecting a length therefore requires an explicit judgment about genuine rejection and compromise risk, alongside payload. The storage result alone cannot establish either system efficiency or security.
+
+End-to-end resource use includes image capture, detection, feature extraction, projection, matching, and key management. ResNet50 is included as a comparison encoder, not as a demonstrated substitute with the same device cost as MobileFaceNet. No measurement here establishes latency, peak memory, power, or energy on a kiosk or smart gadget.
+
+
+Table~\ref{tab:priorcomparison} places the findings beside established protection and reconstruction studies. Pre-image and record-multiplicity attacks have prior examples~\cite{wang2021csa,li2014multiplicity}. The present empirical contribution connects exposure count to fresh-key acceptance, compares template lengths and encoders, and reports storage and genuine utility with the security outcomes. External methods were not rerun, so their reported success rates cannot support a direct ranking against these experiments.
+
+
+Generalization remains limited by the use of two pretrained checkpoints and two celebrity datasets. Demographic variation, possible overlap with encoder-training data, and transfer to other capture conditions were not evaluated. Official recognition pairs and custom attack partitions also represent different populations and cannot be pooled. Differences between LFW and CFP may reflect preprocessing, selection, and calibration as well as pose.
+
+The CFP screening procedure excluded 186 crops, and its post-hoc correspondence evidence and single-reviewer decisions constrain audit independence. Statistical coverage has further limits: the bootstrap holds fitted pipelines and thresholds fixed, omits refitting variability, and provides pointwise rather than multiplicity-adjusted intervals. The available impostor samples are too small to substantiate very-low-FAR population claims. Renewal and linkage findings similarly remain specific to the tested key schedules and classifiers.
+
+The reconstructed input is a digital embedding. A camera attack would require additional image-generation and presentation tests. The accompanying source package contains protocol descriptions, numerical evidence, figure scripts, and checksums. The separate LFW replay archive contains frozen embeddings, operators, fitted PCA models, pair decisions, and validation checks. Full reproduction from photographs also requires the recorded datasets, model weights, and preprocessing environment.

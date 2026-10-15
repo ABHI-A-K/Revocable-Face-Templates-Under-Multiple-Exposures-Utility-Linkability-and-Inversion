@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "revision": "2026-10-14 prose, notation and methodology",
+  "pages": 17,
+  "tables": 16,
+  "figures": 13,
+  "references": 38,
+  "unchanged_original_data_files": 47,
+  "headline_and_encoder_table_checks": "PASS",
+  "overfull_boxes": false,
+  "unresolved_references": false,
+  "visual_review": "Rendered pages inspected; graph labels and overview diagram checked",
+  "experiments_rerun": false,
+  "new_mathematical_material": "Formalization and explanatory derivation; no new empirical or universal security result",
+  "no_AI_detector_score_claimed": true,
+  "subsection_headings": 0,
+  "introduction": "Contributions integrated as prose; spans pages 1-2, more than one page of typeset text",
+  "methodology": "Single-column black-and-white vector flow on page 3",
+  "layout": "Single-column comparison plots; compact float gaps; all figures before references",
+  "notation": "Table VI on page 3 precedes equation (1) on page 4",
+  "all_original_displayed_equations_preserved": true
+}

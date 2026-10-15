@@ -1,0 +1,36 @@
+{
+  "experiment": "CFP-E04-REV",
+  "completed_utc": "2026-09-11T09:17:13.837002+00:00",
+  "inputs": {
+    "e03_results_sha256": "5e173220ca6024b3d2be5d58025241272b79c194f4bad92e8b718c1794282e1e",
+    "e03_cache_sha256": "3e5b4b8dab19f6b1d20c1e376e26b350b06719ad8b02295a4f0ac8e77eb5abdb"
+  },
+  "dimensions": [
+    512,
+    128
+  ],
+  "seeds": [
+    24001,
+    24002,
+    24003,
+    24004,
+    24005,
+    24006,
+    24007,
+    24008,
+    24009,
+    24010
+  ],
+  "target_training_far": 0.001,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "protocol": "Frozen CFP pair folds; thresholds calibrated on 9 folds, tested on remaining fold; not identity-disjoint",
+  "threat": "Unmodified old binary template reaches matcher; no operator-aware translation, training, inversion or version-ID gate",
+  "e03_reproduction": "140000 same-key pair scores and 200 thresholds/count sets passed",
+  "limitations": [
+    "Repeated keys/images/pairs create dependent trials",
+    "Descriptive worst transition",
+    "No security claim beyond unchanged template replay"
+  ]
+}

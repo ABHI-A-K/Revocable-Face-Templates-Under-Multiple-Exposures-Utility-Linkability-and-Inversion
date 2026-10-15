@@ -1,0 +1,102 @@
+[
+  {
+    "path": "candidate_mapping.csv",
+    "sha256": "56644ae5312fb3478e5001f01ac5524c1bd387c189fe1ccb8a81ed5f53b8c182",
+    "bytes": 2468387
+  },
+  {
+    "path": "control_scores.csv",
+    "sha256": "75fedbee8f2bcde80abdcf5105165edbb24925a6055e573ccb7fa4e1cc82dedb",
+    "bytes": 2928211
+  },
+  {
+    "path": "geometry_report.json",
+    "sha256": "77ffc74c57965ab3b645164f5a8121d647ca3f9cde8ae6eb2bda6cb417547874",
+    "bytes": 6658
+  },
+  {
+    "path": "geometry_scores.csv",
+    "sha256": "7415aaabde045483073e865e58f3a951aead888c0a17acd431dccef245f97579",
+    "bytes": 2570424
+  },
+  {
+    "path": "mapping_evidence.csv",
+    "sha256": "29a9b06da372ff3b091e651599265b37519242315815e59c21e1346419e9a2ee",
+    "bytes": 1258793
+  },
+  {
+    "path": "review_index.csv",
+    "sha256": "4dca11728efb4e207b5f9e99939eb0603c05e61868baf4da2524a52ab93b0c37",
+    "bytes": 12663
+  },
+  {
+    "path": "review_sheets/page_001.jpg",
+    "sha256": "69c9f6808bed0d8795e823505b83bf9257ddabfba9d6e1f0394314c746cd311a",
+    "bytes": 112318
+  },
+  {
+    "path": "review_sheets/page_002.jpg",
+    "sha256": "4aed28f7987492cacdca4264065e6fcb84e5bdc5617ffe42c6fe2f1d0992c151",
+    "bytes": 119989
+  },
+  {
+    "path": "review_sheets/page_003.jpg",
+    "sha256": "47dc2fbf80c477667c55ee317597e12310f6cd2c856ff7f0e91e3bb72201ed0d",
+    "bytes": 111287
+  },
+  {
+    "path": "review_sheets/page_004.jpg",
+    "sha256": "ccc114bf9d71789a372270e1e8815ba059478765206b8b6ae7f3ecbbbcba7640",
+    "bytes": 128985
+  },
+  {
+    "path": "review_sheets/page_005.jpg",
+    "sha256": "1fc0de34f64347beea54f8367932feb615c6010019f2aca6e9d5cbeb6793e681",
+    "bytes": 99900
+  },
+  {
+    "path": "review_sheets/page_006.jpg",
+    "sha256": "162ec5427f6dce62e2b5bac33da3eeb114a7eb9f6fc8ae89ec79fa5e7b4cf0de",
+    "bytes": 111717
+  },
+  {
+    "path": "review_sheets/page_007.jpg",
+    "sha256": "9f3a32695b2157c318c101fe810cfcc581f0dd6be8307092ff9cbb939d972546",
+    "bytes": 118563
+  },
+  {
+    "path": "review_sheets/page_008.jpg",
+    "sha256": "02efc472a44ab9215e4a6ec5161d61e45dec494e56c6eef1a6da84873fa7f570",
+    "bytes": 120111
+  },
+  {
+    "path": "review_sheets/page_009.jpg",
+    "sha256": "868e2c9f2abf9e8cd93866419dc235e251f2b378ed2609fb063756801a4a1c7b",
+    "bytes": 134504
+  },
+  {
+    "path": "review_sheets/page_010.jpg",
+    "sha256": "1461bf94ab6c5ed4fa13e40bb3c42df63d2f4d6684dd887b88f027efcb26d553",
+    "bytes": 134444
+  },
+  {
+    "path": "shared_crop_audit.csv",
+    "sha256": "a0cfb24bef895dee85d26c73668010474128a08f69c18334e86f5c1bfcdb6e18",
+    "bytes": 3072
+  },
+  {
+    "path": "source_content_inventory.csv",
+    "sha256": "69ed3fc5e60e0646eb210a083d18198f8e66b70d86e94307ea04d352999c3f14",
+    "bytes": 1357291
+  },
+  {
+    "path": "tracker_row.tsv",
+    "sha256": "ad1782999d5fa5f31ee96c85632dc5ada24221f879ab9b954d92148c9bb462a8",
+    "bytes": 246
+  },
+  {
+    "path": "unresolved_mapping.csv",
+    "sha256": "265f23a553dc2f5389d488b6b29945c635275aed7c3dfdc1476cd2807e90ee94",
+    "bytes": 38830
+  }
+]

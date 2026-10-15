@@ -1,0 +1,12 @@
+{
+  "experiment": "CFP-ENC-E04",
+  "status": "PASS",
+  "completed_utc": "2026-10-09T05:38:48.988623+00:00",
+  "elapsed_seconds": 158.68489265441895,
+  "conditions": 36,
+  "bootstrap_replicates": 2000,
+  "unique_test_identities": 195,
+  "interval_rows": 1584,
+  "paired_rows": 792,
+  "e03_primary_reproduced": true
+}

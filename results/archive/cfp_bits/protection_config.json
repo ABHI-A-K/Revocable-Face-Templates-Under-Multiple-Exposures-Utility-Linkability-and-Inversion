@@ -1,0 +1,33 @@
+{
+  "input_dimension": 512,
+  "output_bits": 128,
+  "projection": "Gaussian matrix followed by reduced QR; orthonormal columns",
+  "binarization": "projected value >= 0",
+  "similarity": "fraction of equal bits (Hamming similarity)",
+  "key_seeds": [
+    24001,
+    24002,
+    24003,
+    24004,
+    24005,
+    24006,
+    24007,
+    24008,
+    24009,
+    24010
+  ],
+  "projection_sha256_by_seed": {
+    "24001": "6925436cd5ffbfb3615435233988d1e014d21fd7dc023db1b90d759f5d03ae2e",
+    "24002": "3c706d31a1fbd4cd5f960daf13ef01ba21d7b2f28fa97a6fa66590a3ed8afa59",
+    "24003": "3d3c20fb53c2483df14fd37ac77ddfa203642d4aa79ddcd311a128aa206cd933",
+    "24004": "580d03596f5a51b2951718e7c519edf6628c5f420715e2a78e97ca41bd57e728",
+    "24005": "bb3d1d64b985267d82f608a427757c555a541c4016c411eba099a8f0e8baa083",
+    "24006": "d76097050c79cfe28f34f0ea1e110e1b2bccbdf2a96ebce278d24b0a37ada3c3",
+    "24007": "966768d20fbd76259f0b46695284222d230993284d14b2e8f2c1cdb7da17657c",
+    "24008": "0fcc125340530416a53f5e8486b5ef60645b4d7968d00b55510ca182da2206cc",
+    "24009": "a8a668861e2d33befec1bc4632416e134392fd6ac34ed65910228676a44b6943",
+    "24010": "1aaebf05e7592587b28ac8c4f60d2b2cff0e1546a2d956d055107a92274961d1"
+  },
+  "packed_bitorder": "big",
+  "security_boundary": "Seeds are public reproducibility identifiers. E02 evaluates verification utility and same-image cross-key unlinkability, not cryptographic irreversibility under key exposure."
+}

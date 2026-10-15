@@ -1,0 +1,10 @@
+{
+  "pair_side_images": 14000,
+  "valid_embeddings": 14000,
+  "coverage": 1.0,
+  "unique_encoded_images": 5890,
+  "embedding_dimension": 512,
+  "batch_size": 256,
+  "seconds": 16.604899559000046,
+  "mean_ms_per_pair_side": 1.186064254214289
+}

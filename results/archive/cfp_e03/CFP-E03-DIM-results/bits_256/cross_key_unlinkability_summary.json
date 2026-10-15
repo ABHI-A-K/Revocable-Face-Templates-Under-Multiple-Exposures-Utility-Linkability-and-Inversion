@@ -1,0 +1,11 @@
+{
+  "key_pairs": 45,
+  "comparison_boundary": "same encoded aligned image across keys versus different encoded images",
+  "mean_same_image_hamming_similarity": 0.49992199290228256,
+  "mean_different_image_hamming_similarity": 0.4999511737172232,
+  "mean_absolute_same_minus_different_gap": 0.001113940765893235,
+  "mean_attacker_oriented_auc_across_key_pairs": 0.5104193420275958,
+  "worst_attacker_oriented_auc": 0.5342426229602706,
+  "pooled_raw_linkability_auc": 0.49978405894592787,
+  "pooled_attacker_oriented_auc": 0.5002159410540721
+}

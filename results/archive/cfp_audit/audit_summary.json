@@ -1,0 +1,27 @@
+{
+  "status": "FLAGGED_CASE_REVIEW_CLOSED_BY_RESEARCHER_CONFIRMATION",
+  "counts": {
+    "STRICT_FIRST_PASS": 4295,
+    "POSTHOC_OVERLAP_SUPPORTED": 1380,
+    "REVIEW_REQUIRED": 26,
+    "POSTHOC_ECC_SUPPORTED": 3
+  },
+  "retained_crops": 5704,
+  "negative_controls": 1000,
+  "negative_controls_accepted": 0,
+  "affected_E07_attack_records": 5760,
+  "affected_E07_unique_people": 3,
+  "both_bin_uploads_identical": true,
+  "bin_sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+  "limitations": [
+    "Post-hoc overlap and ECC tiers are exploratory corroboration, not preregistered acceptance",
+    "Negative controls are sampled, not an exhaustive uniqueness search",
+    "Dataset identity annotations are inherited",
+    "No original results overwritten; no automatic relabeling; affected training partitions require refitting if labels or inclusion change",
+    "26 cases confirmed by the researcher; not an independent second reviewer or real-world identity certification"
+  ],
+  "human_review_same_source": 26,
+  "unresolved_flagged_cases": 0,
+  "mapping_changes": 0,
+  "rerun_required_for_this_review": false
+}

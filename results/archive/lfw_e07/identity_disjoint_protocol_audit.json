@@ -1,0 +1,9 @@
+{
+  "total_pairs": 6000,
+  "genuine_pairs": 3000,
+  "impostor_pairs": 3000,
+  "folds": 10,
+  "duplicate_unordered_image_pairs": 0,
+  "maximum_train_test_identity_overlap": 0,
+  "maximum_test_overlap_with_pca_calibration": 0
+}

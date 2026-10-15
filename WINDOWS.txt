@@ -1,0 +1,15 @@
+WINDOWS EXTRACTION
+
+1. Download FaceRepo_Win.zip.
+2. Right-click the ZIP and select Extract All.
+3. Choose a short destination such as C:\FR or D:\FR.
+4. Open README.md in the extracted folder.
+
+Folder and notebook names are shortened. No extra parent folder is stored
+inside this ZIP. docs/PATH_MAP.csv maps original names to shortened names.
+The research measurements are unchanged. The repository's numerical checks
+have been updated to use the shorter paths.
+
+A very deeply nested destination can still make the total path unnecessarily
+long. Use the short destination above. No Windows registry change is required
+for the recommended extraction location.

@@ -1,0 +1,10 @@
+{
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scipy": "1.17.0",
+  "insightface": "1.0.1",
+  "onnxruntime": "1.28.0",
+  "opencv-python": "4.13.0.92",
+  "opencv-python-headless": "4.13.0.92",
+  "scikit-image": "0.26.0"
+}

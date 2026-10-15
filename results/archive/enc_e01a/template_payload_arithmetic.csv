@@ -1,0 +1,4 @@
+representation,bytes,reduction_factor,saved_percent
+512-D float32,2048,1,0.0
+128-bit packed (planned),16,128,99.21875
+512-bit packed (planned),64,32,96.875

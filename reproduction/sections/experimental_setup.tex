@@ -1,0 +1,60 @@
+\section{Experimental Setup}\label{sec:setup}
+
+
+LFW preprocessing uses SCRFD-500MF~\cite{guo2021scrfd}, detection threshold 0.50, and $640\times640$ input. The largest detected face is aligned to $112\times112$ using five landmarks. The fixed pretrained \texttt{w600k\_mbf} encoder produces the normalized 512-dimensional vector. The 6000 official pairs use 7701 distinct images. Extraction succeeds for 7682 images; 19 failures affect 35 pairs. Full-pipeline results count these failures as rejections. Matcher-only results use the 5965 pairs for which both embeddings exist.
+
+CFP has 500 identities, each with ten frontal and four profile images~\cite{sengupta2016cfp}. The official CFP-FP protocol contains 7000 pairs, half genuine and half impostor. Its aligned-bin baseline includes all 14,000 pair sides and 5890 unique encoded crops, which are passed directly to the encoder. Earlier raw-image detection attempts achieved only 5.73\%, 47.66\%, and 49.70\% coverage. They failed the coverage requirement and are excluded from recognition reporting. The datasets thus use the same baseline encoder but different preprocessing paths.
+
+Official thresholds are selected on nine pair folds and tested on the remaining fold. The CFP length study uses ten RO keys at 64, 128, 256, and 512 bits. Its projections are generated separately for each length, unlike the nested-column construction in CFP E06--E07. The CFP replay study tests all 90 directed changes among ten keys and 3500 genuine pairs per change. Its 315,000 decisions reuse people, images, and keys and are not independent observations.
+
+
+Table~\ref{tab:protocol} gives the custom attack partitions. LFW PCA calibration uses one image from each of 1024 identities excluded from evaluation. The evaluation pool contains 3250 identities and 6658 usable images. Verification uses 300 genuine and 300 impostor pairs per fold, with at most ten genuine pairs per identity. E07 selects 1200 identities, each with two different images, balanced across ten folds. Calibration and threshold selection use the other nine identity folds. Twenty base keys support ten held-out-query trials, with nested exposure counts $K\in\{1,2,5,10\}$.
+
+The screened CFP pool contains 5704 crops from all 500 identities. Each of three seeded partitions assigns 100 identities to PCA calibration, 250 to attacker training, 75 to validation, and 75 to testing. These sets are disjoint within a partition. Across partitions they overlap, and the test sets cover 195 distinct identities. Partition seeds are 2026092201--2026092203; key seeds are 24001--24020. Each query key is excluded from the next ten exposed keys in the rotating schedule. Inversion uses one deterministically selected frontal image and one profile image per identity, tested in both directions. Genuine utility uses the larger frozen E06 validation/test pair lists rather than only these attack images.
+
+\begin{table*}[t]
+\caption{Original MobileFaceNet attack protocols.}
+\label{tab:protocol}\centering\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}\toprule
+Item & LFW E07 & CFP E06--E07 screened subset\\\midrule
+Preprocessing & SCRFD detection and alignment & Already aligned bin crops\\
+Encoder / input dimension & Frozen MobileFaceNet / 512 & Frozen MobileFaceNet / 512\\
+Template lengths & 128 bits & 128 and 512 bits\\
+PCA calibration & 1024 identities, one image each & 100 identities per partition\\
+Attack partition & Ten identity folds, training on other nine & 250 train / 75 validation / 75 test identities\\
+Attack targets & 1200 identities, two images each & 75 identities per split, one image per pose\\
+Repeated evaluations & Ten query-key trials & Three overlapping splits; twenty query-key rotations\\
+Unique test identities & 1200 & 195 across repetitions\\
+Threshold source & Other nine identity folds & Validation identities only\\
+Exposure counts & $K=1,2,5,10$ & $K=1,2,5,10$\\\bottomrule
+\end{tabularx}
+\tabnote{Training and test identities are separate within each protocol; CFP repetitions overlap.}
+\end{table*}
+
+
+The exact frozen QA01 bin was recovered and checked against its SHA-256 digest. Hashes connect all 14,000 pair-side rows to the cached crops. The audit also checks 7000 source-file hashes and decoded RGB hashes for 5901 mapped source references. Some references contain identical image data, so their count exceeds the 5890 unique encoded crops.
+
+Among the 5704 retained crops, 4295 pass the strict SIFT/affine check, 1380 have post-hoc overlap-only support, and three have post-hoc ECC registration support. The researcher visually reviewed the remaining 26 flagged cases and marked all as \texttt{SAME\_SOURCE}. This review changed neither the mapping nor the subset. The original 186 excluded crops remain excluded. The review resolves the flagged correspondences but is not independent certification of every identity label.
+
+The correspondence controls comprise 500 images of different people and 500 alternative photographs of the same people. Neither control group passes the strict or overlap rules. This is useful supporting evidence, but the sample size, absence of a separate ECC negative-control study, post-hoc checks, and single reviewer limit the audit's strength. These screened attack data are retained separately from the official benchmark.
+
+
+Linkage features include per-bit agreement, sorted cross-key Hamming similarities, and their mean, standard deviation, minimum, maximum, median, and range. A logistic-regression model with standardized features is fitted using training identities only. CFP uses $C=1$ and chooses the balanced-accuracy threshold on validation identities. LFW uses training and testing across identity folds. ROC AUC evaluates score ranking without requiring a binary threshold. Basic cross-key diagnostics use direction-aware AUC; learned attacks use the trained score direction.
+
+The main matcher threshold targets FAR $\alpha=10^{-3}$ using non-test impostor scores. For CFP, sorted validation scores allow at most $\lfloor\alpha n\rfloor$ false accepts. The \texttt{nextafter} operation places the threshold just above the boundary score and handles ties conservatively. Test FAR is then measured separately. The original CFP sensitivity study repeats this rule at $\alpha\in\{10^{-4},5\!\times\!10^{-4},10^{-3},5\!\times\!10^{-3},10^{-2}\}$ without selecting thresholds from test labels. Frozen E06 scores reproduce the original operating point and avoid changes in template bits caused by cross-platform QR arithmetic.
+
+
+Uncertainty in E07 is estimated from 2000 bootstrap draws of test identities. A sampled identity has a common weight across every key, direction, repetition, and method in which it appears. Weighted outcomes are computed within each split or fold before averaging those splits or folds equally. Applying the same draw to both sides of a paired contrast preserves the dependence created by repeated evaluation of the same person.
+
+The percentile intervals describe variation across tested identities with the fitted models, PCA, selected images, keys, partitions, and thresholds fixed. They do not include refitting uncertainty, adjust for multiple comparisons, or provide population-wide guarantees. For CFP utility, genuine pairs use identity weights and impostor pairs use the product of the two identity weights. Earlier intervals across keys instead describe key variation. A matched threshold sweep for the original LFW attack study is unavailable because the retained files lack the full calibration-score cache.
+
+\input{sections/statistical_formulation}
+
+
+
+The second frozen checkpoint, InsightFace \texttt{w600k\_r50} trained with ArcFace~\cite{arcface}, tests whether the main finding occurs with another encoder. Both checkpoints output normalized 512-dimensional embeddings. The CFP replication uses identical aligned crops, the same screened subset, identity partitions, key schedule, and template lengths. PCA, reconstruction calibration, linkage models, and matching thresholds are fitted separately for each encoder using the prescribed partitions. ResNet50 serves as an encoder comparison, with no claim that its device cost matches MobileFaceNet. The comparison holds inputs and evaluation rules fixed, but does not isolate architecture from training data or loss. It does not match the encoders at exactly equal genuine TAR.
+
+The LFW extension uses the original 6000 official pairs and ten folds. All 7701 image records are checked against the frozen MobileFaceNet extraction before ResNet50 receives the same aligned crops. Original raw and RO MobileFaceNet fold counts and packed templates are reproduced. Five fixed keys are used at 128 bits. SRHT uses new, recorded comparison keys. For PCA-guided RO, each fold has a separate 256-component PCA fitted to unique valid images from the other nine folds after excluding every identity present in the held-out fold. Official folds can share identities for threshold estimation; this is not the identity-disjoint LFW attack protocol. No second-encoder LFW attack result is claimed.
+
+
+The CFP encoder replication uses three validation-FAR targets, $10^{-4}$, $10^{-3}$, and $10^{-2}$, and a descriptive sweep of discrete matching thresholds. Its 2000-replicate identity bootstrap follows the same global identity-weighting principle. All thresholds and fitted models remain fixed during resampling. The original CFP baseline and the encoder replication retain their own result tables; small differences between their runs are not pooled or silently replaced.

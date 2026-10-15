@@ -1,0 +1,37 @@
+{
+  "experiment": "CFP-FP-E07_INV",
+  "status": "FULL_RUN_COMPLETE",
+  "seconds": 311.7778432369232,
+  "bits": [
+    512,
+    128
+  ],
+  "K": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "splits": [
+    2026092201,
+    2026092202,
+    2026092203
+  ],
+  "query_rotations": 20,
+  "threat": "old templates and operators compromised; fresh key only applied by simulated embedding-input verifier",
+  "training": "250 auxiliary identities; diagonal calibration; PCA scale from training images only",
+  "aligned_with": "LFW-E07_INV; same attack families, different dataset/partitions/bit lengths",
+  "original_benchmark": false,
+  "identity_mapping": "geometrically screened; not independently certified",
+  "limitations": [
+    "No photograph reconstruction or camera attack",
+    "No proof of inversion resistance from attack failure",
+    "Observed FAR may exceed validation target",
+    "Overlapping splits and shared identities/keys; SD is descriptive",
+    "No statistical population confidence intervals",
+    "Subset mapping uncertainty"
+  ],
+  "python": "3.12.13",
+  "numpy": "2.0.2",
+  "pandas": "2.3.3"
+}

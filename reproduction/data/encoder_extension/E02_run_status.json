@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "experiment": "CFP-ENC-E02",
+  "completed_utc": "2026-10-08T06:32:45.169322+00:00",
+  "elapsed_seconds": 4326.83216381073,
+  "replay_rows": 41040,
+  "linkage_rows": 5760,
+  "blocks": 720,
+  "exposures": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "keys": [
+    24001,
+    24002,
+    24003,
+    24004,
+    24005,
+    24006,
+    24007,
+    24008,
+    24009,
+    24010,
+    24011,
+    24012,
+    24013,
+    24014,
+    24015,
+    24016,
+    24017,
+    24018,
+    24019,
+    24020
+  ],
+  "split_seeds": [
+    2026092201,
+    2026092202,
+    2026092203
+  ],
+  "scope": "Screened CFP same-key utility reproduced, unchanged-bit replay, fixed-key-schedule template-only linkage",
+  "caveats": [
+    "Identity screening limitation retained from E01B.",
+    "Replay bypasses metadata/version checks; same-image and cross-image rates are separate.",
+    "K historical templates encode one source photo; query uses a different photo.",
+    "Operators and raw embeddings are unavailable to the linkage classifier.",
+    "Keys/pairs/directions/repeated splits are dependent; no significance claim.",
+    "Post-hoc direction-aware AUC uses test orientation and is diagnostic only.",
+    "No embedding reconstruction or camera attack evaluated."
+  ]
+}

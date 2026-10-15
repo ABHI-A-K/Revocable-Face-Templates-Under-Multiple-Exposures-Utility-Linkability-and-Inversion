@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "date": "2026-10-14",
+  "notebooks": 24,
+  "original_notebooks": 22,
+  "package_replay_wrappers": 2,
+  "cleaned_outputs": true,
+  "notebook_code_syntax": "PASS via IPython transformation",
+  "query_exclusion_rows": 50,
+  "identity_partition_rows": 7500,
+  "cfp_aggregate_estimates": 672,
+  "encoder_comparison_table_rows": 10,
+  "lfw_frozen_embedding_recognition_replay": "PASS",
+  "full_image_to_attack_pipeline_rerun": false,
+  "figure_regeneration": "PASS",
+  "remaining_dependencies": "See docs/REPRODUCIBILITY.md",
+  "license": "rights reserved pending author choice"
+}

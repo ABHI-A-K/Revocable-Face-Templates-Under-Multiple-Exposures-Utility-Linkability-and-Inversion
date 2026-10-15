@@ -1,0 +1,18 @@
+{
+  "conclusion": "CUMULATIVE_LINKABILITY_LEAKAGE_OR_VALIDITY_WEAKNESS_OBSERVED",
+  "worst_same_key_auc": 0.9908973881050047,
+  "maximum_mean_learned_attacker_auc_across_k": 0.5586871089509701,
+  "worst_learned_attacker_auc": 0.5868914654293996,
+  "mean_k10_d_sys": 0.07050921214280777,
+  "mean_k10_balanced_accuracy": 0.5409340830285283,
+  "mean_k10_minus_k1_auc_growth": 0.0024917473309512494,
+  "guardrail_checks": {
+    "same_key_validity_pass": true,
+    "mean_learned_auc_pass": false,
+    "worst_learned_auc_pass": true,
+    "k10_mean_d_sys_pass": true,
+    "k10_auc_growth_pass": true,
+    "k10_balanced_accuracy_pass": true
+  },
+  "scope": "LFW official pairs, 20 deterministic RO keys, protected-template-only per-bit-agreement and score-combination attack, 128-bit templates."
+}

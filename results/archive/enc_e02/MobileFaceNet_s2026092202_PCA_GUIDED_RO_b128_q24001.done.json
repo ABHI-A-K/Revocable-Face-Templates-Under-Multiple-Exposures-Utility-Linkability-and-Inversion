@@ -1,0 +1,75 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E02",
+    "revision": "E02-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "StandardScaler + LogisticRegression C=1 liblinear tol=1e-4 max_iter=2000 random_state=0",
+    "replay": "all ordered different-key transitions; same image and cross-image both directions"
+  },
+  "files": {
+    "results/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b128_q24001_replay.csv": "bbbae37d08fc32740a1e5dde6eac20d73702e03485d96d37f9b9c9f4af30ba6a",
+    "evidence/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b128_q24001_replay.npz": "1194e7b9705c0eb5e683ab46a308d7be244eefd057fc2db29dbe7a24f9b324b6",
+    "evidence/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b128_q24001_replay_index.json": "8ba4d5d99b777ec8c220fe4c010f7a7e67f8c938d3d107ca6099b13c34202cc2",
+    "results/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b128_q24001_linkage.csv": "84d338c6cbf9f4abf036ceda7ee4822c046681f9f5c8af2a0909f9efeebad573",
+    "evidence/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b128_q24001_linkage.npz": "a5e231b0a274f3ed9ee2376a160ae654b98e74bac376a9114a32132a83b76761",
+    "evidence/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b128_q24001_linkage_index.json": "c157ddbe2fa137cee77f2ef45d94a11960f645fb328b62e4e20e57d978c5c82f"
+  }
+}

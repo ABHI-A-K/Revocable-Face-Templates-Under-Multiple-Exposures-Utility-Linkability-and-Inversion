@@ -1,0 +1,42 @@
+[
+  {
+    "path": "CFP-E03-E04-Reproduction-ready.ipynb",
+    "bytes": 13011,
+    "sha256": "69fc157c819d6ef9e784a7c5187fe791815c041159c1a880865637271525dc25"
+  },
+  {
+    "path": "Verification_Brief.md",
+    "bytes": 4555,
+    "sha256": "eeb35e15fc08271667d7359025d64b94614a8ca2d3cc6317ccd22b80e91446d9"
+  },
+  {
+    "path": "regenerated_controls.csv",
+    "bytes": 10493,
+    "sha256": "4c4433bf597fe479fc54ed0137cac8bc95d1e2ef57a37669a84cb4493fc8cb8b"
+  },
+  {
+    "path": "regenerated_summary.csv",
+    "bytes": 487,
+    "sha256": "9277a52530c5a977e0aca1bf9f5d0651a777790c4fbe4dd6b3eace1b2961c6aa"
+  },
+  {
+    "path": "regenerated_transitions.csv",
+    "bytes": 29929,
+    "sha256": "e0a0b07726ab43fdfd712b59c7a45c19a6b160d59bb6513cea09bde61f3f5db2"
+  },
+  {
+    "path": "reproduce_e04.py",
+    "bytes": 8850,
+    "sha256": "daa6bc6919d13153915de840de1a09f3ea9931501b885c265b633d92374e8869"
+  },
+  {
+    "path": "reproduction_audit.json",
+    "bytes": 1463,
+    "sha256": "939fe979eefe85285bf0cfdbcac578e280a92e1ac9ef5d3e2aa764a6b15dc20d"
+  },
+  {
+    "path": "tracker_row.tsv",
+    "bytes": 325,
+    "sha256": "bab58b9c00864f3660605dfacd736c6cfbe098b479eb3447e40fa491f3e790e6"
+  }
+]

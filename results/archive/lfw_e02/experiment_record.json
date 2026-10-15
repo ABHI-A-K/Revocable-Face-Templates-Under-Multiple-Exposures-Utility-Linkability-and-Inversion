@@ -1,0 +1,255 @@
+{
+  "experiment_id": "LFW-E02-seeded-RO",
+  "title": "Seeded Random-Orthogonal 128-bit protected templates on LFW",
+  "researcher": "Abhishek A K",
+  "institution": "IIIT Dharwad / MIT Manipal",
+  "run_started_utc": "2026-08-11T06:25:30.702584+00:00",
+  "run_completed_utc": "2026-08-11T06:33:07.036448+00:00",
+  "purpose": "Evaluate whether a seeded random-orthogonal 128-bit BioHash preserves LFW verification performance relative to the frozen 512-D E01 baseline.",
+  "hypothesis": "The protected representation will retain strong recognition performance while reducing stored template size from 2,048 bytes to 16 bytes.",
+  "dataset": {
+    "name": "Labeled Faces in the Wild",
+    "variant": "deep-funnelled",
+    "protocol": "pairs.csv",
+    "total_pairs": 6000,
+    "genuine_pairs": 3000,
+    "impostor_pairs": 3000,
+    "folds": 10,
+    "unique_images": 7701,
+    "missing_images": 0
+  },
+  "frozen_pipeline": {
+    "model_pack": "buffalo_sc",
+    "detector": "SCRFD-500MF",
+    "recognizer": "MobileFaceNet w600k_mbf",
+    "detection_threshold": 0.5,
+    "detection_size": [
+      640,
+      640
+    ],
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "model_sha256": {
+      "det_500m.onnx": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+      "w600k_mbf.onnx": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f"
+    }
+  },
+  "embedding_extraction": {
+    "total_unique_images": 7701,
+    "valid_embeddings": 7682,
+    "read_failures": 0,
+    "detection_failures": 19,
+    "invalid_embeddings": 0,
+    "multiple_face_images": 1230,
+    "embedding_shape": [
+      7701,
+      512
+    ],
+    "minutes_this_cell": 6.836359209683334
+  },
+  "failure_audit": {
+    "failed_unique_images": 19,
+    "affected_pairs": 35,
+    "evaluable_pairs": 5965,
+    "affected_genuine_pairs": 19,
+    "affected_impostor_pairs": 16
+  },
+  "protected_template": {
+    "method": "seeded Gaussian random projection + reduced QR + zero threshold",
+    "input_dimension": 512,
+    "template_bits": 128,
+    "seeds": [
+      2026081101,
+      2026081102,
+      2026081103,
+      2026081104,
+      2026081105
+    ],
+    "common_transform_within_each_seed": true,
+    "raw_float32_bytes_per_template": 2048,
+    "protected_packed_bytes_per_template": 16,
+    "storage_reduction_factor": 128.0,
+    "packed_bitorder": "big",
+    "failed_rows_are_placeholders": true
+  },
+  "evaluation": {
+    "official_folds": 10,
+    "threshold_training": "nine folds only; held-out fold used only for testing",
+    "target_training_far": 0.001,
+    "views": [
+      "end_to_end_operational",
+      "matcher_only"
+    ],
+    "failure_rule": "automatic reject in end-to-end operational view"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "operating_system": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "packages": {
+      "numpy": "2.0.2",
+      "pandas": "2.3.3",
+      "opencv-python": "4.13.0.92",
+      "Pillow": "11.3.0",
+      "scikit-learn": "1.6.1",
+      "matplotlib": "3.10.0",
+      "onnx": "1.22.0",
+      "onnxruntime-gpu": "1.26.0",
+      "insightface": "1.0.1"
+    },
+    "onnxruntime_providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "e01_low_far_reference": {
+    "end_to_end_operational": {
+      "evaluated_pairs": 6000,
+      "mean_threshold": 0.239187,
+      "pooled_tar": 0.980333,
+      "pooled_observed_far": 0.001,
+      "pooled_frr": 0.019667,
+      "fp": 3,
+      "fn": 59
+    },
+    "matcher_only": {
+      "evaluated_pairs": 5965,
+      "mean_threshold": 0.239187,
+      "pooled_tar": 0.986582,
+      "pooled_observed_far": 0.001005,
+      "pooled_frr": 0.013418,
+      "fp": 3,
+      "fn": 40
+    }
+  },
+  "results": {
+    "accuracy_across_seeds": [
+      {
+        "evaluation": "end_to_end_operational",
+        "seed_trials": 5,
+        "mean_threshold_mean": 0.59921875,
+        "mean_threshold_std": 0.0020669932,
+        "pooled_accuracy_mean": 0.9642,
+        "pooled_accuracy_std": 0.0015202339,
+        "pooled_tar_mean": 0.9519333333,
+        "pooled_tar_std": 0.0030129351,
+        "pooled_far_mean": 0.0235333333,
+        "pooled_far_std": 0.0025011109,
+        "pooled_frr_mean": 0.0480666667,
+        "pooled_frr_std": 0.0030129351
+      },
+      {
+        "evaluation": "matcher_only",
+        "seed_trials": 5,
+        "mean_threshold_mean": 0.59921875,
+        "mean_threshold_std": 0.0020669932,
+        "pooled_accuracy_mean": 0.9671751886,
+        "pooled_accuracy_std": 0.001529154,
+        "pooled_tar_mean": 0.9580006709,
+        "pooled_tar_std": 0.0030321386,
+        "pooled_far_mean": 0.0236595174,
+        "pooled_far_std": 0.0025145216,
+        "pooled_frr_mean": 0.0419993291,
+        "pooled_frr_std": 0.0030321386
+      }
+    ],
+    "roc_across_seeds": [
+      {
+        "evaluation": "end_to_end_operational",
+        "seed_trials": 5,
+        "auc_mean": 0.9856993111,
+        "auc_std": 0.0010420377,
+        "eer_mean": 0.0371163435,
+        "eer_std": 0.0006231017,
+        "eer_threshold_mean": 0.5890406728,
+        "eer_threshold_std": 0.0013084706,
+        "genuine_mean_mean": 0.7035890562,
+        "genuine_mean_std": 0.0006110404,
+        "genuine_std_mean": 0.0850817428,
+        "genuine_std_std": 0.0007171281,
+        "impostor_mean_mean": 0.4987744738,
+        "impostor_mean_std": 0.0006243312,
+        "impostor_std_mean": 0.0592069025,
+        "impostor_std_std": 0.0002720391
+      },
+      {
+        "evaluation": "matcher_only",
+        "seed_trials": 5,
+        "auc_mean": 0.9919217825,
+        "auc_std": 0.0010543023,
+        "eer_mean": 0.033145438,
+        "eer_std": 0.0006292187,
+        "eer_threshold_mean": 0.5915627603,
+        "eer_threshold_std": 0.0011398884,
+        "genuine_mean_mean": 0.7080735282,
+        "genuine_mean_std": 0.000614935,
+        "genuine_std_mean": 0.0640961988,
+        "genuine_std_std": 0.0009621009,
+        "impostor_mean_mean": 0.5014488732,
+        "impostor_mean_std": 0.0006276789,
+        "impostor_std_mean": 0.0467191758,
+        "impostor_std_std": 0.0003696249
+      }
+    ],
+    "tar_at_far_1e-3_across_seeds": [
+      {
+        "evaluation": "end_to_end_operational",
+        "seed_trials": 5,
+        "mean_threshold_mean": 0.64578125,
+        "mean_threshold_std": 0.0058096851,
+        "pooled_tar_mean": 0.8246666667,
+        "pooled_tar_std": 0.0226188221,
+        "pooled_observed_far_mean": 0.0009333333,
+        "pooled_observed_far_std": 0.0002788867,
+        "pooled_frr_mean": 0.1753333333,
+        "pooled_frr_std": 0.0226188221
+      },
+      {
+        "evaluation": "matcher_only",
+        "seed_trials": 5,
+        "mean_threshold_mean": 0.64578125,
+        "mean_threshold_std": 0.0058096851,
+        "pooled_tar_mean": 0.8299228447,
+        "pooled_tar_std": 0.0227629876,
+        "pooled_observed_far_mean": 0.0009383378,
+        "pooled_observed_far_std": 0.000280382,
+        "pooled_frr_mean": 0.1700771553,
+        "pooled_frr_std": 0.0227629876
+      }
+    ],
+    "e01_vs_e02_low_far": [
+      {
+        "evaluation": "end_to_end_operational",
+        "e01_raw_tar": 0.980333,
+        "e02_ro_tar_mean": 0.8246666667,
+        "e02_ro_tar_std": 0.0226188221,
+        "tar_change_percentage_points": -15.5666333333,
+        "e01_raw_observed_far": 0.001,
+        "e02_ro_observed_far_mean": 0.0009333333,
+        "e02_ro_observed_far_std": 0.0002788867,
+        "e01_raw_frr": 0.019667,
+        "e02_ro_frr_mean": 0.1753333333,
+        "e02_ro_frr_std": 0.0226188221
+      },
+      {
+        "evaluation": "matcher_only",
+        "e01_raw_tar": 0.986582,
+        "e02_ro_tar_mean": 0.8299228447,
+        "e02_ro_tar_std": 0.0227629876,
+        "tar_change_percentage_points": -15.6659155317,
+        "e01_raw_observed_far": 0.001005,
+        "e02_ro_observed_far_mean": 0.0009383378,
+        "e02_ro_observed_far_std": 0.000280382,
+        "e01_raw_frr": 0.013418,
+        "e02_ro_frr_mean": 0.1700771553,
+        "e02_ro_frr_std": 0.0227629876
+      }
+    ]
+  },
+  "scope_limitations": [
+    "No cross-key unlinkability claim is made in E02.",
+    "No inversion or reconstruction attack is evaluated in E02.",
+    "LFW contains known demographic and capture-condition limitations.",
+    "Observed test FAR is descriptive; calibration targets training FAR <= 1e-3."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "experiment": "CFP-FP-E05-PREP-R3",
+  "run_completed": true,
+  "status": "REVIEW_REQUIRED",
+  "total_cached_crops": 5890,
+  "crops_evaluated": 5890,
+  "crops_screen_supported": 5704,
+  "crops_not_supported": 186,
+  "negative_controls_evaluated": 11780,
+  "negative_controls_passing": 32,
+  "structural_checks_passed": true,
+  "baseline_bin_verified": true,
+  "rules": {
+    "ratio": 0.72,
+    "min_inliers": 10,
+    "min_inlier_fraction": 0.6,
+    "min_hull_fraction": 0.08,
+    "min_overlap": 0.45,
+    "min_correlation": 0.9,
+    "max_mean_absolute_error": 0.12,
+    "max_median_reprojection": 1.5
+  },
+  "opencv": "4.13.0",
+  "numpy": "2.0.2",
+  "source_inputs": [
+    {
+      "path": "/kaggle/input/datasets/abhiak0709/cfp-e04-r4-aligned-embedding-cache/aligned_pair_side_metadata.csv",
+      "sha256": "f48c7105ab3350f559a691988dcfbbae49087c334e8db8bb4a76225feb893e03",
+      "bytes": 1406319
+    },
+    {
+      "path": "/kaggle/input/datasets/abhiak0709/cfp-e04-r4-aligned-embedding-cache/aligned_pair_side_embeddings.npy",
+      "sha256": "a899bf866695c2e470d4ec039b2918dbc764c5c44955241fd62ff93c6c8d6824",
+      "bytes": 28672128
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/01/same.txt",
+      "sha256": "5bee626ab8732b0b5d659083187da6c0b53916ad17df6caf0d2cb0db5e9b9009",
+      "bytes": 2534
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/01/diff.txt",
+      "sha256": "a41b65b42c1c86f7b9f345be430281081011bdc714b027c8e1cbd63ef167d733",
+      "bytes": 2543
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/02/same.txt",
+      "sha256": "5b833400a221f1419474c9fac53c669bf215e46bc5e7194389733586eabd83d9",
+      "bytes": 2800
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/02/diff.txt",
+      "sha256": "f7f94b2c078fce5e95abd687e13d4b48bf310ed6356967df836fe13e3b440d37",
+      "bytes": 2801
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/03/same.txt",
+      "sha256": "04adea6066db63cc7e9e66d72f9a20a5b05ba618582e871d5b6886929b0bd682",
+      "bytes": 3150
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/03/diff.txt",
+      "sha256": "d9c4d4d0bd2c355817f7979f54502fa0be95080173361fecbbc532b1c4f7dd8b",
+      "bytes": 3150
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/04/same.txt",
+      "sha256": "38afaf4f33f5353034a0ac0057f1d2726438f803141a1829468cf549671b6a1d",
+      "bytes": 3150
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/04/diff.txt",
+      "sha256": "398e1915e0a3fbd2df05b8aa14213161ae6c7d792f1b14c05bab857d972879c7",
+      "bytes": 3150
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/05/same.txt",
+      "sha256": "f20cdbb9615a878249706f9dec945ab31e4890dcaede920d862eb429b099ee30",
+      "bytes": 3151
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/05/diff.txt",
+      "sha256": "04d473b4186297c58d00a481d36b1b168ce4925996d4f4b39d7501eb9016beac",
+      "bytes": 3152
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/06/same.txt",
+      "sha256": "3fd128db8066913fd24d4dc503a3aeab8f38de36bbc29db1096f5fe81d350b27",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/06/diff.txt",
+      "sha256": "afa12edaec7e0e53090a034eb78e0a7743a05f8fa6d73b1bde3b2982a631c661",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/07/same.txt",
+      "sha256": "2fed5558736fcfb3e6391c99737d5556cfb1c554a45f1c1c95a6b69fadef19fb",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/07/diff.txt",
+      "sha256": "442f727dfac7cdd640eaaadf0cafc8d3cc2adec5c4430f8f31e27c73da1dd2b1",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/08/same.txt",
+      "sha256": "36d3c7dfc5a19c2df966706aa4e9be18156271f22dd1c2139edd24990cc74e5a",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/08/diff.txt",
+      "sha256": "dd4f59488def365712bb4d5b61ac152c2468b47f7044be0fbbb5121c65f0ca35",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/09/same.txt",
+      "sha256": "97376028279fc23b57e329015b8e5646d24559b6b099f207684c7d075b0ffce1",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/09/diff.txt",
+      "sha256": "323e1329e91c10ccdb93c0d05d45602a2eec14ae9e5d2872f0468204be53d754",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/10/same.txt",
+      "sha256": "10038c09bee5e1d35539cee006c4607bc5bdfc98beb576efa36a9d092dbc5e22",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Split/FP/10/diff.txt",
+      "sha256": "cc3375abd3b2f65a55093e9b04a90f26501185629d18fb4f50685c2c10431bbe",
+      "bytes": 3500
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Pair_list_F.txt",
+      "sha256": "6c6fa2476555a298a16f9134e524de5b07ca89f6aca9ca2831eccfe37d5c99eb",
+      "bytes": 193893
+    },
+    {
+      "path": "/kaggle/input/datasets/chinafax/cfpw-dataset/cfp-dataset/Protocol/Pair_list_P.txt",
+      "sha256": "b9c677d732e7e894e7faa8d8b682741cf153db82f513f726b4e9516210b0035f",
+      "bytes": 76893
+    },
+    {
+      "path": "/kaggle/working/cfp_fp_verified_source/cfp_fp.bin",
+      "sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+      "bytes": 76267779
+    }
+  ],
+  "issues": [],
+  "attacker_executed": false,
+  "interpretation": "Engineering image-correspondence screen, not a validated face-recognition or security metric.",
+  "next_step": "Review geometric evidence and all unresolved cases before finalising identity mapping; do not treat candidate labels as verified automatically.",
+  "future_E05": {
+    "primary_bits": 512,
+    "comparison_bits": 128,
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ]
+  }
+}

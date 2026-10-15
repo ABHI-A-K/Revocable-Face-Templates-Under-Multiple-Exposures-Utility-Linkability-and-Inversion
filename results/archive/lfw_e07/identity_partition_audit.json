@@ -1,0 +1,8 @@
+{
+  "calibration_identities": 1024,
+  "calibration_valid_images": 1024,
+  "evaluation_identities": 3250,
+  "evaluation_valid_images": 6658,
+  "calibration_evaluation_identity_overlap": 0,
+  "selection_rule": "lowest capped genuine-pair capacity first; complete identities"
+}

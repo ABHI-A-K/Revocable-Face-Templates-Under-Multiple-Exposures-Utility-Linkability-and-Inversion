@@ -1,0 +1,45 @@
+{
+  "algorithm": "numpy default_rng PCG64; Gaussian float64; QR; nonnegative R diagonal",
+  "keys": [
+    {
+      "seed": 24001,
+      "matrix_sha256": "9394bb0746999700023f10adfd3eb98a78342bf42349bf4b44249084abf4d390"
+    },
+    {
+      "seed": 24002,
+      "matrix_sha256": "bf1694fdb4b9faa05b38b5382aeb695b9f235685414ae0b84f5ff99c3292d864"
+    },
+    {
+      "seed": 24003,
+      "matrix_sha256": "7153c500e5e24bfa6081a6b71146961b7f8e225008fcca2681603b1831b494b9"
+    },
+    {
+      "seed": 24004,
+      "matrix_sha256": "06d5dd36bfec3a7e7767f7fbd1e30f377be07ce8517054357f9305aebc992bd5"
+    },
+    {
+      "seed": 24005,
+      "matrix_sha256": "4656924de3908ecfef81eb16d2892d0b44c5798dc8785b7ad779c35074982342"
+    },
+    {
+      "seed": 24006,
+      "matrix_sha256": "73f1d6cfb544b3b47a3abf623155e073be7e5f1ae1b4f39162479986303adf48"
+    },
+    {
+      "seed": 24007,
+      "matrix_sha256": "3c4f243c1dcba6654dbfdea0639402aefdb8b10dc61b11457899120798fdfc7e"
+    },
+    {
+      "seed": 24008,
+      "matrix_sha256": "a050bd15021dbe2b04aa212316b8e022d899daf398b1aa8df8fc6a021cab24e9"
+    },
+    {
+      "seed": 24009,
+      "matrix_sha256": "776dbfed1b208cdddafadb59221f8183e29af69b78b2eabf7790bf07b9b5e14d"
+    },
+    {
+      "seed": 24010,
+      "matrix_sha256": "75b4f76182a10a7eb8482d7901f0e2469ee1b07efbc503e7d79762eccfd29fe2"
+    }
+  ]
+}

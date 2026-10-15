@@ -1,0 +1,21 @@
+{
+  "status": "PARTIAL_CLOSURE",
+  "cfp_identity": "NOT_INDEPENDENTLY_VERIFIED",
+  "cfp_rows": 432000,
+  "lfw_rows": 144000,
+  "cfp_unique_test_people": 195,
+  "lfw_unique_test_people": 1200,
+  "retained_cfp_crops": 5704,
+  "uncertainty": "2000 global identity-cluster bootstrap draws; shared person weights across splits; equal split/fold weighting; conditional on fixed fitted models, keys and thresholds; not full pipeline uncertainty",
+  "threshold_analysis": "CFP complete: 5 validation-selected FAR targets; original operating points reproduced exactly; no test tuning",
+  "lfw_threshold_analysis": "NOT_RUN: raw matcher calibration scores/embedding cache absent; existing per-attack scores alone cannot select new matcher thresholds",
+  "identity_blocker": "Need original CFP source images and frozen cfp_fp.bin or authoritative generation mapping to independently establish crop-to-source correspondence. Existing geometric evidence and hashes alone cannot certify it.",
+  "input_sha256": {
+    "CFP-FP-E07_INV-results.zip": "7dc488ab7edb2367442610a15d4ca1926967341aa8d9fb341ab57a18d9f062ac",
+    "LFW-E07_INV-embedding-inversion-results.zip": "2b65ee633c704f87163662fbe2c108b5b668565c90d57f41c8f441f79e41efcc",
+    "CFP-FP-E01-R4-aligned-embedding-cache.zip": "8cb55b18174a07a62f460629c29f6b12b59141c113e6b287663d145bb7ea854c",
+    "CFP-FP-E06-PROJ-results(1).zip": "5ac8630a3b0078565c53a6668896938e728c4a1ab29d9259d32a962ff7e27eeb"
+  },
+  "matcher_uncertainty": "CFP: 2000 global identity resamples; genuine comparisons weighted by person count; impostor comparisons by product of both people counts; fixed thresholds/models; not threshold-estimation or training uncertainty",
+  "checks": "Original CFP operating points reproduced; threshold and acceptance monotonicity passed; baseline ASR summaries reproduced"
+}

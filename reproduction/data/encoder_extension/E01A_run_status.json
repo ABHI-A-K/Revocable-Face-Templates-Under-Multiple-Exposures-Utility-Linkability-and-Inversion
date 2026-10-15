@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "experiment": "CFP-ENC-E01A",
+  "completed_utc": "2026-10-07T13:57:30.988595+00:00",
+  "completed_scope": "CFP preparation and paired raw recognition only",
+  "pending_scope": [
+    "LFW preparation",
+    "RO/SRHT/PCA utility",
+    "renewal/linkage",
+    "inversion",
+    "identity-bootstrap and threshold comparison"
+  ],
+  "source": {
+    "sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+    "path": "/kaggle/working/CFP-ENC-E01A/public_inputs/cfp_fp.bin",
+    "pairs": 7000,
+    "pair_sides": 14000,
+    "unique_crops": 5890,
+    "fold_rule": "10 contiguous folds, 700 pairs each, 350G/350I",
+    "detector": false,
+    "flip": false,
+    "resize": false
+  },
+  "models": {
+    "MobileFaceNet": {
+      "filename": "w600k_mbf.onnx",
+      "sha256": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f",
+      "official_pack": "buffalo_sc",
+      "source_url": "https://github.com/deepinsight/insightface/releases/download/v0.7/buffalo_sc.zip",
+      "bytes": 13616099,
+      "hash_validation": "prior known checksum"
+    },
+    "ResNet50_ArcFace": {
+      "filename": "w600k_r50.onnx",
+      "sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+      "official_pack": "buffalo_l",
+      "source_url": "https://github.com/deepinsight/insightface/releases/download/v0.7/buffalo_l.zip",
+      "bytes": 174383860,
+      "hash_validation": "official source; first-run hash lock"
+    }
+  },
+  "limitations": [
+    "Official folds are not identity-disjoint.",
+    "New R50 hash is source-recorded, not independently authenticated against a published digest.",
+    "Pretrained-model comparison; not a controlled training ablation.",
+    "No protected utility or security measurements in this notebook.",
+    "No measured edge-device latency, memory, energy, or significance inference."
+  ]
+}

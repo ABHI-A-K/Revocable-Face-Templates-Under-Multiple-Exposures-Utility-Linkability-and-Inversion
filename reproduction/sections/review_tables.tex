@@ -1,0 +1,53 @@
+\begin{table*}[t]
+\caption{Face-recognition models, preprocessing, and evaluation datasets.}
+\label{tab:review1}\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}\toprule
+Study & Main contribution & Relevance to this paper \\ \midrule
+DeepFace~\cite{deepface} & Alignment and deep representations for unconstrained verification. & Preprocessing shapes the features later protected.\\[3pt]
+FaceNet~\cite{facenet} & Triplet learning of compact metric embeddings. & Stored embeddings preserve reusable identity similarity.\\[3pt]
+SphereFace~\cite{sphereface} & Multiplicative angular margin on hyperspherical features. & Recognition geometry motivates normalized-feature analysis.\\[3pt]
+CosFace~\cite{cosface} & Additive cosine margin with normalized features and weights. & Discriminative features are not inherently protected.\\[3pt]
+ArcFace~\cite{arcface} & Additive angular margin for deep face recognition. & Angular separation supports cosine-based matching.\\[3pt]
+MagFace~\cite{magface} & Embedding magnitude linked to quality and class structure. & Image quality can alter matching outcomes.\\[3pt]
+AdaFace~\cite{adaface} & Quality-adaptive margins estimated from feature norms. & Difficult images need careful utility interpretation.\\[3pt]
+MobileFaceNets~\cite{chen2018mobilefacenet} & Efficient convolutional models for mobile face verification. & Provides the compact baseline feature extractor.\\[3pt]
+SCRFD~\cite{guo2021scrfd} & Sample and computation redistribution for efficient detection. & Supports LFW detection; coverage failures are reported.\\[3pt]
+LFW report~\cite{huang2007lfw} & Unconstrained face images and verification protocol. & Official pairs are distinct from custom attack folds.\\[3pt]
+CFP~\cite{sengupta2016cfp} & Frontal-to-profile face verification benchmark. & Enables evaluation across substantial pose changes.\\[3pt]
+\bottomrule\end{tabularx}\tabnote{These studies cover face features, preprocessing, and evaluation datasets.}
+\end{table*}
+
+\begin{table*}[t]
+\caption{Renewable biometric protection and evaluation methods.}
+\label{tab:review2}\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}\toprule
+Study & Main contribution & Relevance to this paper \\ \midrule
+Ratha et al. (2001)~\cite{ratha2001enhancing} & Renewable transformations within biometric security architecture. & Motivates testing the full reference lifecycle.\\[3pt]
+Ratha et al. (2007)~\cite{ratha2007cancelable} & Concrete cancellable fingerprint representations. & Renewal is evaluated separately from recovery risk.\\[3pt]
+BioHashing~\cite{teoh2004biohashing} & Tokenized randomness and biometric features form binary references. & Operator access must be explicit in the threat model.\\[3pt]
+Index-of-Max~\cite{iom2018} & Randomized rank-index hashing through projections or permutations. & Alternative discrete representation; not tested here.\\[3pt]
+IronMask~\cite{ironmask} & Modular protection with real-valued error-correcting codes. & Addresses quantization loss by a different construction.\\[3pt]
+PolyProtect~\cite{polyprotect} & User-specific polynomial protection of face embeddings. & Evaluates protection under fully informed access.\\[3pt]
+MLP-Hash~\cite{mlphash} & Random multilayer projection followed by binarization. & Extends protection beyond one linear projection.\\[3pt]
+FaceCloak~\cite{facecloak} & Learned renewable binary cloaks against inversion. & A candidate for future evaluation under the same protocol.\\[3pt]
+Gomez-Barrero et al.~\cite{gomezbarrero2018unlinkability} & Score-distribution framework for measuring unlinkability. & A linkage score and an inversion attack answer different questions.\\[3pt]
+Hahn and Marcel survey~\cite{hahn2022survey} & Review of neural face-template protection and evaluation. & Supports explicit assumptions and multiple security endpoints.\\[3pt]
+\bottomrule\end{tabularx}\tabnote{These studies address renewable references and protection evaluation.}
+\end{table*}
+
+\begin{table*}[t]
+\caption{Reconstruction, repeated compromise, and signed-measurement studies.}
+\label{tab:review3}\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}\toprule
+Study & Main contribution & Relevance to this paper \\ \midrule
+Rathgeb and Uhl survey~\cite{rathgeb2011survey} & Review of biometric cryptosystems and cancellable transformations. & Separates recognition accuracy from irreversibility and unlinkability.\\[3pt]
+Deep-template benchmark~\cite{benchmark2026} & Common evaluation of cancellable schemes across four modalities. & Provides broader methodological context for this focused study.\\[3pt]
+Mai et al.~\cite{mai2019reconstruction} & Reconstruction of face images from deep templates. & Distinguishes source-image and cross-image attack endpoints.\\[3pt]
+Vec2Face~\cite{vec2face} & Distillation and bijective metric learning for face generation. & Image synthesis is a different interface from embedding injection.\\[3pt]
+Foundation-model adapter~\cite{shahreza2024adapter} & Adapter-based face reconstruction from embeddings. & A generative endpoint not implemented in this work.\\[3pt]
+Wang et al.~\cite{wang2021csa} & Constraint-based pre-image attacks on BioHashing and Index-of-Max hashing. & IEEE/CVF precedent for testing recovery from protected face templates.\\[3pt]
+Li and Hu~\cite{li2014multiplicity} & Recovery from multiple cancellable fingerprint records and transformation parameters. & Establishes record-multiplicity risk in another biometric modality.\\[3pt]
+Plan and Vershynin~\cite{plan2013} & Sparse-vector recovery from signed linear measurements. & Sign quantization alone does not ensure irreversibility.\\[3pt]
+Jacques et al.~\cite{jacques2013} & Binary stable embeddings and one-bit reconstruction. & Recovery motivation; assumptions differ from learned face features.\\[3pt]
+\bottomrule\end{tabularx}\tabnote{These studies explain reconstruction, repeated compromise, and one-bit recovery.}
+\end{table*}

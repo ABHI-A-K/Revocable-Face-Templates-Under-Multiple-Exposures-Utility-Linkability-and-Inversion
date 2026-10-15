@@ -1,0 +1,199 @@
+# Original code export; run with IPython after configuring inputs.
+# Not an independently rerun or refactored implementation.
+# Cell 1
+from pathlib import Path
+import json,hashlib,zipfile,io,pickle,shutil,html,base64,os
+from datetime import datetime,timezone
+import numpy as np
+import pandas as pd
+from PIL import Image,ImageOps
+from IPython.display import display,FileLink
+INPUT_ROOT=Path('/kaggle/input')
+WORK_ROOT=Path('/kaggle/working') if Path('/kaggle').exists() else Path.cwd()
+R3_INPUT=None # ZIP or extracted R3 directory; auto-detected when unique
+REFERENCE_INPUT=None # CFP dataset root; auto-detected via Pair_list_F.txt
+BIN_INPUT=None
+DECISIONS_INPUT=None # optional review_decisions.json for second run
+OUT=WORK_ROOT/('CFP-FP-E05-PREP-R4-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f'))
+OUT.mkdir(parents=True)
+EXPECTED_BIN='76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370'
+def sha(p):
+ h=hashlib.sha256()
+ with open(p,'rb') as f:
+  for b in iter(lambda:f.read(1048576),b''):h.update(b)
+ return h.hexdigest()
+def unpack(p):
+ p=Path(p)
+ if p.is_dir():return p
+ d=OUT/'r3_input';d.mkdir(exist_ok=True)
+ with zipfile.ZipFile(p) as z:
+  if sum(x.file_size for x in z.infolist())>2*1024**3:raise ValueError('Oversized input archive')
+  for x in z.infolist():
+   if not (d/x.filename).resolve().is_relative_to(d.resolve()) or ((x.external_attr>>16)&0o170000)==0o120000:raise ValueError('Unsafe archive path')
+  z.extractall(d)
+ return d
+
+
+# Cell 2
+if R3_INPUT is None:
+ found=list(INPUT_ROOT.rglob('geometry_report.json'))
+ candidates=[p.parent for p in found]
+ if not candidates:
+  for p in INPUT_ROOT.rglob('*.zip'):
+   try:
+    with zipfile.ZipFile(p) as z:
+     if 'geometry_report.json' in z.namelist():candidates.append(p)
+   except zipfile.BadZipFile:pass
+ if len(candidates)!=1:raise ValueError(f'Set R3_INPUT explicitly. Candidates: {candidates}')
+ R3_INPUT=candidates[0]
+root=unpack(R3_INPUT)
+reports=list(root.rglob('geometry_report.json'))
+if len(reports)!=1:raise ValueError('Expected one R3 report')
+root=reports[0].parent
+for item in json.loads((root/'output_manifest.json').read_text()):
+ p=(root/item['path']).resolve()
+ if not p.is_relative_to(root.resolve()) or sha(p)!=item['sha256']:raise ValueError('R3 manifest mismatch')
+report=json.loads((root/'geometry_report.json').read_text())
+assert report['experiment']=='CFP-FP-E05-PREP-R3' and report['run_completed'] and report['baseline_bin_verified']
+report_hash=sha(root/'geometry_report.json')
+evidence=pd.read_csv(root/'mapping_evidence.csv',dtype={'identity':str})
+geometry=pd.read_csv(root/'geometry_scores.csv',dtype={'identity':str})
+controls=pd.read_csv(root/'control_scores.csv',dtype={'control_identity':str})
+candidate=pd.read_csv(root/'candidate_mapping.csv',dtype={'identity':str})
+inventory=pd.read_csv(root/'source_content_inventory.csv',dtype={'identity':str})
+assert evidence.encoded_sha256.is_unique and len(evidence)==report['total_cached_crops']
+review=evidence[evidence.status.eq('REVIEW_REQUIRED')].sort_values('encoded_sha256').reset_index(drop=True)
+print('Existing supported crops:',int(evidence.status.eq('SCREEN_SUPPORTED').sum()))
+print('Cases to review:',len(review))
+if REFERENCE_INPUT is None:
+ refs=list(INPUT_ROOT.rglob('Pair_list_F.txt'))
+ if len(refs)!=1:raise ValueError('Set REFERENCE_INPUT to the CFP dataset root containing Data/Images.')
+ REFERENCE_INPUT=refs[0].parent.parent
+REFERENCE_INPUT=Path(REFERENCE_INPUT)
+def source_path(old):
+ suffix=str(old).split('/Data/Images/',1)
+ if len(suffix)!=2:raise ValueError('Unrecognised source path: '+str(old))
+ p=(REFERENCE_INPUT/'Data'/'Images'/suffix[1]).resolve()
+ if not p.is_relative_to(REFERENCE_INPUT.resolve()) or not p.is_file():raise FileNotFoundError(p)
+ return p
+def pixel_hash(p):
+ with Image.open(p) as im:
+  im=im.convert('RGB');return hashlib.sha256(str(im.size).encode()+b'RGB'+im.tobytes()).hexdigest()
+source_fingerprints=inventory.groupby('source_path').source_pixel_sha256.first().to_dict()
+checked=set()
+def check_source(old):
+ p=source_path(old)
+ if old not in checked:
+  if old not in source_fingerprints or pixel_hash(p)!=source_fingerprints[old]:raise ValueError('Source pixels differ from R3: '+old)
+  checked.add(old)
+ return p
+
+
+# Cell 3
+if BIN_INPUT is None:
+ bins_found=list(INPUT_ROOT.rglob('cfp_fp.bin'))
+ if len(bins_found)>1:raise ValueError('Set BIN_INPUT explicitly')
+ if bins_found:BIN_INPUT=bins_found[0]
+ else:
+  from urllib.request import urlopen
+  BIN_INPUT=WORK_ROOT/'cfp_fp_R4_verified.bin'
+  if not BIN_INPUT.exists() or sha(BIN_INPUT)!=EXPECTED_BIN:
+   url='https://huggingface.co/datasets/Icar/val_sets/resolve/1f7800d9d5ba295554573a4e292e870b64a49b74/cfp_fp.bin'
+   temp=BIN_INPUT.with_suffix('.download')
+   with urlopen(url,timeout=60) as r,open(temp,'wb') as f:shutil.copyfileobj(r,f)
+   if sha(temp)!=EXPECTED_BIN:raise ValueError('Downloaded baseline checksum mismatch')
+   temp.replace(BIN_INPUT)
+if sha(Path(BIN_INPUT))!=EXPECTED_BIN:raise ValueError('Wrong baseline bin')
+with open(BIN_INPUT,'rb') as f:bins,labels=pickle.load(f,encoding='bytes')
+ordered=candidate.sort_values('bin_index')
+assert np.array_equal(ordered.bin_index,np.arange(14000)) and len(bins)==14000
+assert np.array_equal(np.asarray(labels,dtype=int),ordered.candidate_label.to_numpy()[::2])
+needed=set(review.encoded_sha256);crop_bytes={}
+for data,expected in zip(bins,ordered.encoded_sha256):
+ h=hashlib.sha256(data).hexdigest()
+ if h!=expected:raise ValueError('Baseline/candidate order mismatch')
+ if h in needed:crop_bytes[h]=data
+assert len(crop_bytes)==len(needed)
+del bins
+print('Baseline and all candidate occurrences verified.')
+
+
+# Cell 5
+images=OUT/'images';images.mkdir()
+cards=[]
+def save_image(data,name):
+ with Image.open(io.BytesIO(data)) as im:
+  im=ImageOps.contain(im.convert('RGB'),(480,480))
+  im.save(images/name,quality=95)
+ return 'images/'+name
+for i,row in review.iterrows():
+ h=row.encoded_sha256;parts=[]
+ crop=save_image(crop_bytes[h],f'{i:03d}_crop.jpg')
+ parts.append(f'<figure><img src="{crop}"><figcaption>Baseline crop</figcaption></figure>')
+ g=geometry[geometry.encoded_sha256.eq(h)]
+ for j,(_,source) in enumerate(g.iterrows()):
+  p=check_source(source.source_path);name=save_image(p.read_bytes(),f'{i:03d}_source{j}.jpg')
+  caption=html.escape(f'Candidate original: {p.parent.parent.name}/{p.parent.name}/{p.name}')
+  parts.append(f'<figure><img src="{name}"><figcaption>{caption}</figcaption></figure>')
+ passed=controls[controls.encoded_sha256.eq(h)&controls.supported.eq(True)]
+ for j,(_,control) in enumerate(passed.iterrows()):
+  p=check_source(control.source_path);name=save_image(p.read_bytes(),f'{i:03d}_control{j}.jpg')
+  caption=html.escape(f'Passing control: {control.kind}; {p.parent.parent.name}/{p.parent.name}/{p.name}')
+  parts.append(f'<figure><img src="{name}"><figcaption>{caption}</figcaption></figure>')
+ scores=g[['reason','inliers','hull_fraction','overlap','correlation','mean_absolute_error']].to_html(index=False)
+ cards.append(f'<section data-hash="{h}"><h2>{i+1}/{len(review)} — candidate {html.escape(str(row.identity))}, {html.escape(row.pose)}</h2><div class="photos">'+''.join(parts)+f'</div>{scores}<p>Crop hash: <code>{h}</code></p><select><option value="pending">Pending</option><option value="candidate_photo_confirmed">Candidate photo confirmed</option><option value="uncertain">Uncertain</option><option value="candidate_photo_mismatch">Candidate photo mismatch</option></select><textarea placeholder="Evidence notes; address every passing control. Do not infer identity from face similarity."></textarea></section>')
+
+
+# Cell 6
+script = "const sections=[...document.querySelectorAll('section')];\nconst key='cfp-review-'+REPORT_HASH;\nfunction payload(){return {schema:'CFP-R4-review-v1',r3_report_sha256:REPORT_HASH,reviewer:document.querySelector('#reviewer').value.trim(),decisions:sections.map(s=>({encoded_sha256:s.dataset.hash,decision:s.querySelector('select').value,notes:s.querySelector('textarea').value.trim()}))};}\nfunction save(){try{localStorage.setItem(key,JSON.stringify(payload()));}catch(e){}document.querySelector('#count').textContent=sections.filter(s=>s.querySelector('select').value!=='pending').length+'/'+sections.length+' reviewed';}\nfunction restore(p){if(p.r3_report_sha256!==REPORT_HASH)throw Error('Wrong R3 report');document.querySelector('#reviewer').value=p.reviewer||'';const map=new Map(p.decisions.map(x=>[x.encoded_sha256,x]));sections.forEach(s=>{let d=map.get(s.dataset.hash);if(d){s.querySelector('select').value=d.decision;s.querySelector('textarea').value=d.notes||'';}});save();}\ndocument.addEventListener('input',save);document.addEventListener('change',save);\ndocument.querySelector('#export').onclick=()=>{const b=new Blob([JSON.stringify(payload(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='review_decisions.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};\ndocument.querySelector('#import').onchange=async e=>{try{restore(JSON.parse(await e.target.files[0].text()));}catch(err){alert(err.message);}};\ntry{let saved=localStorage.getItem(key);if(saved)restore(JSON.parse(saved));}catch(e){}save();"
+page='<!doctype html><meta charset="utf-8"><title>CFP crop review</title><style>body{font:16px system-ui;margin:24px;background:#f2f4f6}header{position:sticky;top:0;background:white;padding:12px;border-bottom:2px solid #345}section{background:white;margin:24px 0;padding:20px}.photos{display:flex;flex-wrap:wrap;gap:12px}figure{margin:0;max-width:310px}img{max-width:300px;max-height:300px}textarea{display:block;width:95%;height:90px;margin-top:12px}td,th{padding:5px}select,input,button{padding:8px}</style><header><b>Private crop-correspondence review</b> | <span id="count"></span><br>Reviewer <input id="reviewer"><button id="export">Export decisions JSON</button> Import <input id="import" type="file" accept=".json"></header><p>Review photographic correspondence, not person identity. For competing photos, explain why they pass or leave uncertain. Export regularly; no network requests are made.</p>'
+page+=''.join(cards)+'<script>const REPORT_HASH='+json.dumps(report_hash)+';'+script+'</script>'
+(OUT/'review.html').write_text(page,encoding='utf-8')
+print('Review HTML created for all',len(cards),'cases.')
+
+
+# Cell 8
+allowed={'pending','candidate_photo_confirmed','uncertain','candidate_photo_mismatch'}
+def validate_decisions(p,expected_hash,hashes):
+ if p.get('schema')!='CFP-R4-review-v1' or p.get('r3_report_sha256')!=expected_hash:raise ValueError('Decision file belongs to another review')
+ rows=p.get('decisions',[]);seen=set()
+ for d in rows:
+  h=d.get('encoded_sha256');decision=d.get('decision')
+  if h not in hashes or h in seen or decision not in allowed:raise ValueError('Unknown, duplicate or invalid decision')
+  if decision!='pending' and (not p.get('reviewer','').strip() or not d.get('notes','').strip()):raise ValueError('Reviewer and evidence notes required')
+  seen.add(h)
+ return {d['encoded_sha256']:d for d in rows}
+if DECISIONS_INPUT is None:
+ found=list(INPUT_ROOT.rglob('review_decisions.json'))
+ if len(found)>1:raise ValueError('Multiple decision files: set DECISIONS_INPUT')
+ if found:DECISIONS_INPUT=found[0]
+decisions={};reviewer=''
+if DECISIONS_INPUT:
+ payload=json.loads(Path(DECISIONS_INPUT).read_text());decisions=validate_decisions(payload,report_hash,needed);reviewer=payload.get('reviewer','')
+ shutil.copyfile(DECISIONS_INPUT,OUT/'imported_decisions.json')
+ledger=review.copy()
+ledger['decision']=[decisions.get(h,{}).get('decision','pending') for h in ledger.encoded_sha256]
+ledger['notes']=[decisions.get(h,{}).get('notes','') for h in ledger.encoded_sha256]
+ledger['reviewer']=reviewer
+ledger.to_csv(OUT/'review_ledger.csv',index=False)
+merged=evidence.merge(ledger[['encoded_sha256','decision','notes','reviewer']],on='encoded_sha256',how='left',validate='one_to_one')
+merged['decision']=merged.decision.fillna('R3_screen_supported_not_manually_reviewed')
+merged.to_csv(OUT/'mapping_evidence_with_review.csv',index=False)
+counts={k:int(v) for k,v in ledger.decision.value_counts().items()}
+complete=bool(len(ledger)>0 and ledger.decision.eq('candidate_photo_confirmed').all())
+summary=dict(experiment='CFP-FP-E05-PREP-R4',r3_report_sha256=report_hash,
+ total_cases=len(ledger),decision_counts=counts,reviewer=reviewer,
+ status='EXCEPTIONS_REVIEWED_MAPPING_FREEZE_PENDING' if complete else 'REVIEW_PENDING',
+ baseline_bin_sha256=EXPECTED_BIN,attacker_executed=False,
+ limits='Human photographic-correspondence review plus R3 screening; not independent person identification or formal proof. Freeze mapping and leakage-safe grouping before E05-ID.',
+ next_step='Return this ZIP and decisions JSON; unresolved cases stay unresolved. No automatic exclusions or replacement identity assignments.')
+(OUT/'review_report.json').write_text(json.dumps(summary,indent=2))
+(OUT/'tracker_row.tsv').write_text('\t'.join(['CFP-FP-E05-PREP-R4','Review uncertain crop correspondences','Confirmed; uncertain; mismatched; pending',json.dumps(counts),'Review evidence only; E05 attacker not run'])+'\n')
+# Do not duplicate extracted R3 payload in the deliverable.
+files=[p for p in OUT.rglob('*') if p.is_file() and 'r3_input' not in p.relative_to(OUT).parts and p.name!='output_manifest.json']
+(OUT/'output_manifest.json').write_text(json.dumps([dict(path=p.relative_to(OUT).as_posix(),sha256=sha(p)) for p in files],indent=2))
+archive=WORK_ROOT/'CFP-FP-E05-PREP-R4-review.zip'
+with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+ for p in files+[OUT/'output_manifest.json']:z.write(p,p.relative_to(OUT))
+print(json.dumps(summary,indent=2));print('Download and extract:',archive)
+display(FileLink(os.path.relpath(archive,Path.cwd())))

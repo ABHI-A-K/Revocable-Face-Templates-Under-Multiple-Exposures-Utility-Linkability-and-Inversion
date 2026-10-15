@@ -1,0 +1,17 @@
+{
+  "pair_embedding_shape": [
+    14000,
+    512
+  ],
+  "unique_embedding_shape": [
+    5890,
+    512
+  ],
+  "pair_embeddings_sha256": "a899bf866695c2e470d4ec039b2918dbc764c5c44955241fd62ff93c6c8d6824",
+  "pair_metadata_sha256": "f48c7105ab3350f559a691988dcfbbae49087c334e8db8bb4a76225feb893e03",
+  "unique_embeddings_sha256": "64f7d0cd7f7bbe220ca3c90617600428574b045766db30c9b8e3c09df70a80d8",
+  "unique_metadata_sha256": "a51356cc2270b058734a01ed7d7ae74fb6f56b018548288a49a03c4f8e5d9e54",
+  "l2_normalized": true,
+  "fold_protocol_valid": true,
+  "occurrence_to_unique_mapping_valid": true
+}

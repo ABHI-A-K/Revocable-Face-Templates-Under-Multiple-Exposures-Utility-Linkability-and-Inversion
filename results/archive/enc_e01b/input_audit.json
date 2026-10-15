@@ -1,0 +1,16 @@
+{
+  "source_sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+  "encoders": [
+    {
+      "encoder": "MobileFaceNet",
+      "model_hash": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f",
+      "embedding_hash": "efc7f52a2417e630403f0fdb28440a2714e36346b65d14fdef721ea1f7dad4f3"
+    },
+    {
+      "encoder": "ResNet50_ArcFace",
+      "model_hash": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+      "embedding_hash": "94bef8ad75cc3ed9bbecc12af2aa1c4ecfb269ae66daeb11bc76d74960b34c01"
+    }
+  ],
+  "cache_path": "/kaggle/input/datasets/abhiak0709/cfp-enc-e01a-caches"
+}

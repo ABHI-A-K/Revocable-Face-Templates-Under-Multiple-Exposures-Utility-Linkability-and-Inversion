@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "files": {
+    "fold_results.csv": {
+      "rows": 640,
+      "status": "PASS",
+      "tolerance": "rtol=1e-10, atol=1e-12"
+    },
+    "seed_summary.csv": {
+      "rows": 64,
+      "status": "PASS",
+      "tolerance": "rtol=1e-10, atol=1e-12"
+    },
+    "summary.csv": {
+      "rows": 16,
+      "status": "PASS",
+      "tolerance": "rtol=1e-10, atol=1e-12"
+    }
+  },
+  "scope": "Recognition from frozen embeddings; no image extraction or attacks rerun",
+  "regenerated_asset": "pca_MobileFaceNet_fold4.npz"
+}

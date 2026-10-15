@@ -1,0 +1,78 @@
+[
+  {
+    "path": "CFP-FP-source-evidence-collector.ipynb",
+    "sha256": "e41cb96006801929457a40ad87747a7a358d4bb310b8be7e9a666ed38b0a41a7"
+  },
+  {
+    "path": "READ_ME_and_findings.md",
+    "sha256": "88bf783d74ba5bb6f48cf3c852d519c07ba5dfc4be1bfdf5040f3a2637995859"
+  },
+  {
+    "path": "matcher_uncertainty.py",
+    "sha256": "ae21e6eb7e444609a405ed1348470f798e1f1f924b17a13b20545db269bfd4df"
+  },
+  {
+    "path": "results/cfp_matcher_scores.npz",
+    "sha256": "5167208925098a5abf3fc1748cf8a39a3488fff97412f2391acb01c46b5c2335"
+  },
+  {
+    "path": "results/identity_bootstrap_intervals.csv",
+    "sha256": "3e3dd6a735da63bec3eeed75283c4193b0d21c4b4e168f7c564e7d91e5c4cd2e"
+  },
+  {
+    "path": "results/independent_source_review_required.csv",
+    "sha256": "596135126afb1b93b51b3bf7e8e3e189674015b7be649d034462d8feaa8dcd02"
+  },
+  {
+    "path": "results/matcher_identity_intervals.csv",
+    "sha256": "b68af5b58bdea2d3b7916738200dd34ddb1ff3cec9230412f9628f3cb61cdf74"
+  },
+  {
+    "path": "results/paired_identity_contrasts.csv",
+    "sha256": "5c321f497086c8e0bc2315c0837804a978e91d2887ccb2569e50fd3e8c090858"
+  },
+  {
+    "path": "results/paper_attack_intervals.csv",
+    "sha256": "6644e392ef42e3927e961366fa16d06ce733e069127a10d47cb8a4bd552bd2d7"
+  },
+  {
+    "path": "results/paper_threshold_table.csv",
+    "sha256": "e03270540b2a2f0b2510a2245a37b0244cd0ac66c3637a2b2418d88dac29a6f6"
+  },
+  {
+    "path": "results/threshold_attack_detail.csv",
+    "sha256": "20c7e2b0e594d0f4c9085e4bb983c204261bc7efbd430dd608340592075f418a"
+  },
+  {
+    "path": "results/threshold_attack_summary.csv",
+    "sha256": "d273743e6f0db0d87a6893f4f1d9d8567238443aef565e3ef7159b972368f220"
+  },
+  {
+    "path": "results/threshold_sensitivity.png",
+    "sha256": "585f303cf7ab65c50dd68ce7bfbfcf26c21a7838173b51d75bebbf50365b5631"
+  },
+  {
+    "path": "results/threshold_utility_detail.csv",
+    "sha256": "68cac1566b88e09f00c131bb8fb7b478c1f4f06ecefa87ed1838c5731f851804"
+  },
+  {
+    "path": "results/threshold_utility_summary.csv",
+    "sha256": "541209ff47dd7bd7db9116758cd14b16446cdb8e53213d6d24889b2fdfd69f57"
+  },
+  {
+    "path": "results/validation_status.json",
+    "sha256": "7d185392e6cce2b6d2e7ac20151577bf3b618c69a646cdf4c7a7a50f80810f2c"
+  },
+  {
+    "path": "run_validation.py",
+    "sha256": "00943f7ec255ba1e666e7c8bfdeef0471cfb48db6b53d8808bbc7deeed626067"
+  },
+  {
+    "path": "tracker_rows.tsv",
+    "sha256": "9f2d20c334cf0bd4c1fd5c5ff6b59a0701d6fe1dd11e243b7a15066b831d0480"
+  },
+  {
+    "path": "verification_receipt.json",
+    "sha256": "0ea85c9f7c88afb22bfa962a0923eaef08d89a00b280a2221e0c4bb089514bb4"
+  }
+]

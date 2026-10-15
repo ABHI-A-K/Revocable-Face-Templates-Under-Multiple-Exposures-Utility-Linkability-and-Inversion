@@ -1,0 +1,49 @@
+{
+  "experiment": "CFP-FP-QA01",
+  "run_completed": true,
+  "baseline_bin_verified": true,
+  "expected_bin_sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+  "unique_crops": 5890,
+  "flagged_crops_exported": 55,
+  "review_source": "AI-assisted review of R4 rendered images",
+  "reviewer": "ChatGPT \u2014 AI-assisted photographic-correspondence review (not human review)",
+  "review_r3_report_sha256": "77ffc74c57965ab3b645164f5a8121d647ca3f9cde8ae6eb2bda6cb417547874",
+  "decoder_max_difference": 0,
+  "e01_counts_reproduced": true,
+  "recorded_e01": {
+    "tp": 3070,
+    "fp": 5
+  },
+  "observed_full_data": {
+    "pairs": 7000,
+    "genuine": 3500,
+    "impostor": 3500,
+    "tp": 3070,
+    "fn": 430,
+    "fp": 5,
+    "tn": 3495,
+    "tar": 0.8771428571428571,
+    "far": 0.0014285714285714286
+  },
+  "inputs": [
+    {
+      "path": "/kaggle/input/datasets/abhiak0709/cfp-e04-r4-aligned-embedding-cache/aligned_pair_side_metadata.csv",
+      "sha256": "f48c7105ab3350f559a691988dcfbbae49087c334e8db8bb4a76225feb893e03",
+      "bytes": 1406319
+    },
+    {
+      "path": "/kaggle/input/datasets/abhiak0709/cfp-e04-r4-aligned-embedding-cache/aligned_pair_side_embeddings.npy",
+      "sha256": "a899bf866695c2e470d4ec039b2918dbc764c5c44955241fd62ff93c6c8d6824",
+      "bytes": 28672128
+    },
+    {
+      "path": "/kaggle/working/cfp_fp_verified_source/cfp_fp.bin",
+      "sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+      "bytes": 76267779
+    }
+  ],
+  "attacker_executed": false,
+  "original_results_modified": false,
+  "interpretation": "Post-hoc quality audit and descriptive fixed-threshold sensitivity; no validated quality cutoff or definitive identity labels.",
+  "next_step": "Inspect direct-bin flagged PNGs and quantify pair impact. Specify a documented quality/provenance policy before any E05 subset experiment; keep original benchmark results unchanged."
+}

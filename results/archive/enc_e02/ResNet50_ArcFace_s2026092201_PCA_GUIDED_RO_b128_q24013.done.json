@@ -1,0 +1,75 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E02",
+    "revision": "E02-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "StandardScaler + LogisticRegression C=1 liblinear tol=1e-4 max_iter=2000 random_state=0",
+    "replay": "all ordered different-key transitions; same image and cross-image both directions"
+  },
+  "files": {
+    "results/ResNet50_ArcFace_s2026092201_PCA_GUIDED_RO_b128_q24013_replay.csv": "5fb94524f740ce155d950959f5a753d0a2528882e1261d9b32d13027f76f7534",
+    "evidence/ResNet50_ArcFace_s2026092201_PCA_GUIDED_RO_b128_q24013_replay.npz": "f42a4e2e41df343d75aaa8466210f7790bb1900297e5de4d88577312c5fb9844",
+    "evidence/ResNet50_ArcFace_s2026092201_PCA_GUIDED_RO_b128_q24013_replay_index.json": "428510b05f219c8f820268cd3cbc26b927fdc084cf59d1b5c7bc71306513aa68",
+    "results/ResNet50_ArcFace_s2026092201_PCA_GUIDED_RO_b128_q24013_linkage.csv": "a38eddcc59a2af0963c84be1096c779fabe0c7ac35bdbfedb397867358538461",
+    "evidence/ResNet50_ArcFace_s2026092201_PCA_GUIDED_RO_b128_q24013_linkage.npz": "4522b3b228fd87353b788f723d1e66c43947d6bf89a0676224b4ecca3bc0fbe1",
+    "evidence/ResNet50_ArcFace_s2026092201_PCA_GUIDED_RO_b128_q24013_linkage_index.json": "1237e4e34d5cbf47fc0341b966d7bfd9ac568397dc76347573fdf7b4fd53a5e0"
+  }
+}

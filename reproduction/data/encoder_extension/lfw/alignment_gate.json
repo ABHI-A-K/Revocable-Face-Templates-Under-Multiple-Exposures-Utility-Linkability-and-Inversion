@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "images": 7701,
+  "valid_images": 7682,
+  "detection_failures": 19,
+  "max_abs_error": 0,
+  "complete_recovery": true
+}

@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Scope of related protection and attack studies.}
+\label{tab:priorcomparison}\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}\toprule
+Study & Protection or attack focus & Relationship to the present evidence\\\midrule
+BioHashing~\cite{teoh2004biohashing} & Tokenized binary biometric transformation. & This paper separates hidden-operator linkage from compromised-operator inversion.\\[3pt]
+IronMask~\cite{ironmask} & Angular face templates protected with real-valued coding. & Different construction; the binary-projection results in this paper do not evaluate its security.\\[3pt]
+PolyProtect~\cite{polyprotect} & Polynomial mapping, including fully informed attack evaluation. & Both relate utility to protection; no common implementation or operating point was tested.\\[3pt]
+MLP-Hash~\cite{mlphash} & Random multilayer mapping and binary output. & Nonlinear projection alternative; the attack in this paper is evaluated on three stated projection families.\\[3pt]
+Deep-template benchmark~\cite{benchmark2026} & Recognition, unlinkability, and irreversibility across modalities. & Broader scheme coverage; this paper examines exposure count, length, and fresh-key digital acceptance.\\[3pt]
+Wang et al.~\cite{wang2021csa} & Constraint-based pre-image attacks against protected face templates. & Related attack objective; the present study tests fresh-key acceptance after repeated exposure.\\[3pt]
+Li and Hu~\cite{li2014multiplicity} & Recovery from multiple fingerprint records and known transformations. & Multiplicity precedent; the present face study adds utility, linkage, and conditional intervals.\\[3pt]
+Mai / Vec2Face / adapter~\cite{mai2019reconstruction,vec2face,shahreza2024adapter} & Face-image reconstruction from embeddings using learned models. & Generated images and injected embeddings have different attack interfaces and denominators.\\[3pt]
+Present study & RO, SRHT, PCA-guided RO; $K=1,2,5,10$; replay, linkage, inversion, and utility. & Joint storage, recognition, and repeated-exposure analysis for intended edge settings; no hardware benchmark.\\\bottomrule
+\end{tabularx}
+\tabnote{The comparison concerns study scope; external methods were not rerun under this protocol.}
+\end{table*}

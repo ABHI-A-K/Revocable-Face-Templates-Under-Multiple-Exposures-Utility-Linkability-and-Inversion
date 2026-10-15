@@ -1,0 +1,47 @@
+{
+  "experiment_id": "LFW-E06-PROJ-projection-comparison",
+  "base_e05_id_notebook_sha256": "2d2e38a8c21850b87d7651d13b1d40711bfe5112b29b21fe3a812df4ca1c00db",
+  "methods": [
+    "RO",
+    "SRHT",
+    "PCA_GUIDED_RO"
+  ],
+  "dimensions": {
+    "embedding": 512,
+    "pca": 256,
+    "template_bits": 128
+  },
+  "base_key_seeds": [
+    2026081101,
+    2026081102,
+    2026081103,
+    2026081104,
+    2026081105,
+    2026081106,
+    2026081107,
+    2026081108,
+    2026081109,
+    2026081110,
+    2026081111,
+    2026081112,
+    2026081113,
+    2026081114,
+    2026081115,
+    2026081116,
+    2026081117,
+    2026081118,
+    2026081119,
+    2026081120
+  ],
+  "exposure_counts": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "identity_folds": 10,
+  "pairs_per_class_per_fold": 300,
+  "pca_calibration_target_images": 1024,
+  "target_far": 0.001,
+  "save_full_oof_scores": false
+}

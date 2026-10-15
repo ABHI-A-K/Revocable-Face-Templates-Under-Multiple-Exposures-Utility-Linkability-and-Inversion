@@ -1,0 +1,77 @@
+{
+  "2026081101": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5028831603098152,
+    "gpu_generation_ms": 147.42371099998763,
+    "packed_template_sha256": "eff08971748c34b3bc90eb6ff656328485c344471fcdbb20210f4d9542c776d8"
+  },
+  "2026081102": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 3.5762786865234375e-07,
+    "overall_one_rate": 0.49982406111689665,
+    "gpu_generation_ms": 0.870257000087804,
+    "packed_template_sha256": "433090dbcaac51649ac41bb2f1b84626f94a644a2e7f7116baae7a86443c0628"
+  },
+  "2026081103": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5029055340406144,
+    "gpu_generation_ms": 0.8360389999779727,
+    "packed_template_sha256": "2388edb6e7be94e7a31763e6e8195d3a8a4ba9c8b3d968e58f49e64e09a64470"
+  },
+  "2026081104": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5027316291330383,
+    "gpu_generation_ms": 0.8362419999912163,
+    "packed_template_sha256": "3e3d32e4abd9a90f8db52578f736bce51071f0108505adaa7461eeb4550af160"
+  },
+  "2026081105": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.4995118458734705,
+    "gpu_generation_ms": 0.8192929999495391,
+    "packed_template_sha256": "223d54d8f22575b9ca0fb1aa20f6820c744168190a75d08a8630816cce0fe492"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E03",
+    "revision": "E03-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "CFP E07 mean signed backprojection and diagonal calibration; denominator floor 1e-8",
+    "targets": "one frontal/profile image per person; seeds +100/+200",
+    "pca_inverse": "training-only mean projected norm",
+    "fresh_key": "excluded from attacker inputs; applied only by verifier"
+  },
+  "files": {
+    "evidence/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b512_q24005_attacks.csv.gz": "3ec505a4456b5ff060eca12e4eabcf827d923c47d7feef5e19400f027404c11f",
+    "evidence/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b512_q24005_calibration.npz": "67084951a63086e15126e488fa59d935b2b5da88604ef5289b163c02076581eb",
+    "results/MobileFaceNet_s2026092202_PCA_GUIDED_RO_b512_q24005_summary.csv": "eb468c5902c708edbc958d79780438dff408da4727e64d6cbf186348dbde7b95"
+  }
+}

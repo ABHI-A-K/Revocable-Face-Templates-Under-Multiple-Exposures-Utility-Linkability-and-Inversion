@@ -1,0 +1,32 @@
+{
+  "status": "SCREENED_SUBSET_ONLY",
+  "all_crops": 5890,
+  "screen_supported": 5704,
+  "review_excluded": 186,
+  "duplicate_pixel_excluded": 0,
+  "retained": 5704,
+  "identities": 500,
+  "ai_confirmations_used": false,
+  "definitive_identity_verification": false,
+  "rule": "R3 SCREEN_SUPPORTED; no passing controls; one representative per original pixel hash",
+  "duplicate_embedding_max_abs_diff": 0.0,
+  "duplicate_embedding_atol": 1e-06,
+  "cache": [
+    {
+      "encoder": "MobileFaceNet",
+      "model_hash": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f",
+      "embedding_hash": "efc7f52a2417e630403f0fdb28440a2714e36346b65d14fdef721ea1f7dad4f3"
+    },
+    {
+      "encoder": "ResNet50_ArcFace",
+      "model_hash": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+      "embedding_hash": "94bef8ad75cc3ed9bbecc12af2aa1c4ecfb269ae66daeb11bc76d74960b34c01"
+    }
+  ],
+  "embedded_evidence": {
+    "mapping_evidence.csv": "29a9b06da372ff3b091e651599265b37519242315815e59c21e1346419e9a2ee",
+    "candidate_mapping.csv": "56644ae5312fb3478e5001f01ac5524c1bd387c189fe1ccb8a81ed5f53b8c182",
+    "source_content_inventory.csv": "69ed3fc5e60e0646eb210a083d18198f8e66b70d86e94307ea04d352999c3f14",
+    "shared_crop_audit.csv": "a0cfb24bef895dee85d26c73668010474128a08f69c18334e86f5c1bfcdb6e18"
+  }
+}

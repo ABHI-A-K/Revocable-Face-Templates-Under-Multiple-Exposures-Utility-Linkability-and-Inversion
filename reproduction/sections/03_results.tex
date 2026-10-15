@@ -1,0 +1,164 @@
+\section{Results}\label{sec:results}
+We first report the original MobileFaceNet experiments, followed by the matched encoder replication. Unless stated otherwise, thresholds use a 0.1\% training or validation FAR target, with test FAR measured separately. Rates are expressed as percentages and their differences as percentage points; AUC and cosine similarity are unitless.
+
+
+Table~\ref{tab:official} reports official-pair verification at a training FAR target of 0.1\%. Protected results average five LFW keys or ten CFP keys. On LFW, matcher-only TAR is 98.66\% for raw embeddings and 82.99\% for 128-bit RO. On CFP-FP, the raw baseline is 87.71\%, while RO TAR is 35.93\% at 128 bits and 80.50\% at 512 bits. The compact 128-bit representation therefore loses much more genuine acceptance in the frontal-to-profile setting.
+
+\begin{table}[t]
+\caption{Original MobileFaceNet verification on official pairs.}
+\label{tab:official}\centering\small
+\begin{tabular}{@{}llrrr@{}}\toprule
+Dataset & Representation & TAR (\%) & FAR (\%) & Bytes\\\midrule
+LFW & Raw 512-D & 98.66 & 0.101 & 2048\\
+LFW & RO 128-bit & 82.99 & 0.094 & 16\\
+CFP-FP & Raw 512-D & 87.71 & 0.143 & 2048\\
+CFP-FP & RO 64-bit & 14.56 & 0.077 & 8\\
+CFP-FP & RO 128-bit & 35.93 & 0.103 & 16\\
+CFP-FP & RO 256-bit & 61.49 & 0.129 & 32\\
+CFP-FP & RO 512-bit & 80.50 & 0.106 & 64\\\bottomrule
+\end{tabular}
+\tabnote{Official-pair rates use a 0.1\% training FAR target; LFW results are matcher-only.}
+\end{table}
+
+Across the CFP length study, TAR increases from 14.56\% at 64 bits to 80.50\% at 512 bits, leaving a 7.21-percentage-point gap to the raw baseline. The longer representation is consequently included in the attack evaluation: restricting that evaluation to short templates would assess protection at a substantially weaker genuine operating point.
+
+When LFW detection failures count as rejections, full-pipeline TAR is 98.03\% for raw embeddings and 82.47\% for 128-bit RO. These values differ from the matcher-only rates in Table~\ref{tab:official}. CFP uses supplied aligned crops, so complete crop coverage does not demonstrate successful detection on its raw photographs.
+
+
+Table~\ref{tab:storage} connects template size to the edge motivation. A 128-bit template needs 16 bytes, saving 99.22\% of the raw 2048-byte payload. A 512-bit template needs 64 bytes, saving 96.88\%. Equivalently, the payloads are 128 times and 32 times smaller than the raw embedding. These savings follow directly from the representation sizes and apply to each tested family at the stated length.
+
+\begin{table}[t]
+\caption{Packed template payload relative to a raw embedding.}
+\label{tab:storage}\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Representation & Bytes & Reduction & Saved (\%)\\\midrule
+Raw 512-D float32 & 2048 & $1\times$ & 0.00\\
+Protected 128-bit & 16 & $128\times$ & 99.22\\
+Protected 512-bit & 64 & $32\times$ & 96.88\\\bottomrule
+\end{tabular}
+\tabnote{Savings cover packed templates only; model, operator, key, and metadata costs are excluded.}
+\end{table}
+
+For $N$ enrolled references, the template payload is $2048N$, $16N$, or $64N$ bytes. Increasing CFP RO payload from 16 to 64 bytes raises official TAR from 35.93\% to 80.50\%, but the custom experiments below also reveal greater reconstruction risk. The storage advantage must therefore be weighed against both recognition and exposure outcomes.
+
+Figure~\ref{fig:storage-scaling} expresses the same deterministic payload accounting over database size. It isolates the template component and therefore does not measure full application memory.
+\begin{figure}[!tb]
+\centering\includegraphics[width=\columnwidth]{storage_scaling.pdf}
+\caption{Calculated template-only storage as the number of enrolled references grows. Both axes are logarithmic; one MiB is $2^{20}$ bytes.}
+\label{fig:storage-scaling}\fignote{Curves exclude model weights, working memory, keys, operators, and metadata.}
+\end{figure}
+
+
+Table~\ref{tab:replay} tests whether unchanged old bits are accepted after a key change, with version checks bypassed. CFP accepts 106 of 315,000 decisions at 128 bits and 10 at 512 bits. These trials reuse subjects and keys, so the counts describe the test schedule rather than independent risk observations. Recalculation from the cache reproduces the saved scores, thresholds, and decisions.
+
+\begin{table}[t]
+\caption{Acceptance of unchanged old templates after renewal.}
+\label{tab:replay}\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Dataset / bits & Accepted / trials & Rate (\%) & Worst (\%)\\\midrule
+LFW / 128 & 28 / 59,620 & 0.04696 & 0.101\\
+CFP-FP / 128 & 106 / 315,000 & 0.03365 & 0.2857\\
+CFP-FP / 512 & 10 / 315,000 & 0.00317 & 0.0571\\\bottomrule
+\end{tabular}
+\tabnote{Unchanged old templates rarely pass the renewed matcher; repeated trials are dependent.}
+\end{table}
+
+The LFW version gate rejects every revoked version in its test. Genuine acceptance can still vary after renewal: TAR differs by up to 5.64 percentage points between two keys. Basic cross-key Hamming scores give pooled AUC 0.5020 on LFW and 0.5010/0.5027 on CFP at 128/512 bits, close to chance on average. The worst individual key-pair AUC is 0.5256 on LFW and 0.5454 on CFP at 512 bits. The CFP diagnostic compares images without disjoint test-identity partitions and should be read within that scope.
+
+
+The learned LFW attack finds a small same-person signal. In the original multiple-exposure test, AUC changes from 0.5558 at one exposure to 0.5583 at ten. Rebuilding pairs with separate training and test identities gives 0.5580 and 0.5595. A signal therefore remains for unseen people. Since pair construction also changed, identity separation alone cannot explain the difference between the two tests.
+
+Table~\ref{tab:linkage} gives E06 means for each dataset's own identity-disjoint protocol. With ten exposures, CFP AUC is 0.5323--0.5377 at 128 bits and 0.5629--0.5667 at 512 bits. The longer template improves genuine matching but gives this attacker a stronger ranking signal. Small differences among the projection methods should not be confused with the larger change in threat model when old operators are revealed.
+
+\begin{table}[t]
+\caption{Template-only linkage AUC at ten exposures.}
+\label{tab:linkage}\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Method & LFW 128 & CFP 128 & CFP 512\\\midrule
+RO & 0.5594 & 0.5328 & 0.5667\\
+SRHT & 0.5577 & 0.5323 & 0.5629\\
+PCA-guided RO & 0.5687 & 0.5377 & 0.5643\\\bottomrule
+\end{tabular}
+\tabnote{AUC describes template-only identity linkage at ten exposures; chance ranking is 0.5.}
+\end{table}
+
+
+Table~\ref{tab:attackutility} gives legitimate utility for the custom E07 protocols at a training/validation FAR target of 0.1\%. In this original custom protocol, the screened CFP raw baseline has TAR 91.47\% and observed FAR 0.325\%. Its images, pair lists, partitions, and thresholds differ from the official benchmark. Attack rates must therefore be compared with this custom protocol's utility, not substituted into the official results.
+
+\begin{table}[t]
+\caption{Genuine utility in the original custom attack protocols.}
+\label{tab:attackutility}\centering\small
+\begin{tabular}{@{}llrr@{}}\toprule
+Protocol & Method & TAR (\%) & FAR (\%)\\\midrule
+LFW, 128 bits & RO & 83.34 & 0.077\\
+ & SRHT & 82.00 & 0.087\\
+ & PCA-guided RO & 84.89 & 0.087\\
+CFP screened, 128 & RO & 39.33 & 0.134\\
+ & SRHT & 37.76 & 0.113\\
+ & PCA-guided RO & 43.50 & 0.115\\
+CFP screened, 512 & RO & 82.52 & 0.172\\
+ & SRHT & 81.95 & 0.167\\
+ & PCA-guided RO & 82.38 & 0.200\\\bottomrule
+\end{tabular}
+\tabnote{These custom-protocol rates are the genuine operating points for the inversion study.}
+\end{table}
+
+\begin{table*}[t]
+\caption{Original MobileFaceNet calibrated inversion: fresh-key attack success and reconstruction quality.}
+\label{tab:inversion}\centering\small
+\begin{tabular}{@{}lrlrrrr@{}}\toprule
+Protocol & Bits & Method & Fresh ASR, $K=1$ & Fresh ASR, $K=10$ [95\% CI] & Cosine & Raw ASR\\\midrule
+% BEGIN GENERATED ATTACK ROWS
+LFW & 128 & RO & 9.13 & 66.63 [64.96, 68.31] & 0.8103 & 97.22 \\
+LFW & 128 & SRHT & 8.39 & 64.53 [62.86, 66.22] & 0.8096 & 97.30 \\
+LFW & 128 & PCA-guided RO & 34.50 & 80.96 [79.47, 82.44] & 0.8635 & 97.53 \\
+CFP screened & 128 & RO & 2.01 & 19.66 [17.23, 22.38] & 0.8105 & 84.22 \\
+CFP screened & 128 & SRHT & 1.93 & 18.84 [16.42, 21.41] & 0.8099 & 84.28 \\
+CFP screened & 128 & PCA-guided RO & 7.86 & 32.94 [29.35, 36.96] & 0.8593 & 86.32 \\
+CFP screened & 512 & RO & 63.27 & 78.02 [73.38, 82.52] & 0.9725 & 88.22 \\
+CFP screened & 512 & SRHT & 62.64 & 77.52 [72.95, 82.10] & 0.9726 & 88.09 \\
+CFP screened & 512 & PCA-guided RO & 70.28 & 78.54 [73.89, 83.03] & 0.9809 & 88.72 \\
+% END GENERATED ATTACK ROWS
+
+\bottomrule
+\end{tabular}
+\tabnote{ASR values are percentages; brackets show conditional 95\% intervals for fresh-key ASR at ten exposures.}
+\end{table*}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{exposure.pdf}
+\caption{Fresh-key attack success increases with exposure; error bars show conditional 95\% identity-bootstrap intervals.}
+\label{fig:exposure}
+\fignote{More exposed records provide useful reconstruction information in the tested configurations.}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{thresholds.pdf}
+\caption{Stricter validation targets reduce genuine and attack acceptance on screened CFP at 512 bits.}
+\label{fig:thresholds}
+\fignote{Lower attack acceptance must be interpreted together with genuine-user rejection.}
+\end{figure*}
+
+Across the three projection methods, calibrated cross-image fresh-key ASR at ten exposures is 64.53--80.96\% on LFW at 128 bits, 18.84--32.94\% on screened CFP at 128 bits, and 77.52--78.54\% on screened CFP at 512 bits. The CFP attack pool contains 5704 crops from 500 identities before partitioning. These ranges describe the original run; the matched CFP encoder replication is reported separately below. Table~\ref{tab:inversion} reports ASR in percent; its brackets give conditional 95\% identity-bootstrap intervals from 2000 replicates. Cosine similarity and raw ASR are measured at $K=10$, with cosine taken against the exposed image.
+
+Figure~\ref{fig:exposure} shows the exposure effect on a common vertical scale. In both result figures, blue solid lines with circles represent RO, orange dashed lines with squares represent SRHT, and green dotted lines with triangles represent PCA-guided RO. Exposure error bars show pointwise conditional 95\% intervals. LFW and CFP retain their separate protocols.
+
+On LFW, ten-exposure ASR is 66.63\% for RO, 64.53\% for SRHT, and 80.96\% for PCA-guided RO. The corresponding uninformed rates are 0.53\%, 0.40\%, and 0.13\%. Acceptance against the exposed image is almost 100\%. Testing against a different photograph is therefore a more informative primary measure than reusing the source image.
+
+At 128 bits on CFP, RO and SRHT recover the source embedding with cosine similarities 0.8105 and 0.8099, close to LFW's 0.8103 and 0.8096. Yet fresh-key cross-pose ASR is only 19.66\% and 18.84\%. PCA-guided RO gives cosine 0.8593 and ASR 32.94\%. This lower attack acceptance accompanies weak genuine cross-pose recognition. Under the separate raw-matcher threshold, reconstructed CFP embeddings reach 84.22--86.32\% ASR.
+
+At 512 bits on CFP, cosine similarity reaches 0.9725, 0.9726, and 0.9809 for RO, SRHT, and PCA-guided RO. Their fresh-key ASRs are 78.02\% [73.38, 82.52], 77.52\% [72.95, 82.10], and 78.54\% [73.89, 83.03]. Uninformed rates are 0.08--0.16\%, while raw ASR is 88.09--88.72\%. The rare acceptance of unchanged old bits does not account for these newly reconstructed inputs.
+
+Diagonal calibration is not necessary for substantial acceptance in the 512-bit CFP setting. At ten exposures, analytical backprojection reaches ASRs of 77.93\%, 77.33\%, and 78.06\% for RO, SRHT, and PCA-guided RO, respectively. Calibration provides only a small additional gain here. These results establish the measured risk with a simple estimator; they do not assess what a more complex decoder might recover.
+
+
+All paired intervals for calibrated $K=10$ minus $K=1$ ASR lie above zero. The increases for RO, SRHT, and PCA-guided RO are 57.50, 56.13, and 46.46 percentage points on LFW; 17.64, 16.91, and 25.09 on CFP at 128 bits; and 14.76, 14.88, and 8.27 on CFP at 512 bits. The 512-bit increases are smaller because single-exposure ASR is already 62.64--70.28\%.
+
+At ten exposures, the CFP 512-bit intervals overlap across methods. The source package includes paired method contrasts, but ranking protection from the point estimates alone is not justified. Under known-operator exposure, substantial attack acceptance occurs for all three projection families.
+
+
+Figure~\ref{fig:thresholds} reports means over fixed keys and splits for screened CFP at 512 bits. The attack panel uses calibrated reconstruction with ten exposures. The gray dash-dot line in the FAR panel marks equality between test FAR and the validation target, expressed as percentages. For RO, tightening the target from $10^{-3}$ to $10^{-4}$ lowers TAR from 82.52\% to 76.04\% and ASR from 78.02\% to 70.56\%. Across methods, ASR remains 69.59--70.56\% at the tighter setting. At the looser $10^{-2}$ target, TAR is about 90.4\% and ASR is 87.17--87.38\%. Stricter matching reduces acceptance for both users and attackers but does not remove the observed risk.
+
+Each validation split contains only 2105--2173 impostor comparisons. The $10^{-4}$ target allows no validation false accepts, yet test FAR is 0.0656--0.0736\%, above the nominal 0.01\%. This sample cannot establish a population FAR of $10^{-4}$. At the main 0.1\% target, CFP 512-bit test FAR is 0.167--0.200\%. Every operating point must therefore be interpreted with its observed FAR.
+
+\input{sections/encoder_extension}

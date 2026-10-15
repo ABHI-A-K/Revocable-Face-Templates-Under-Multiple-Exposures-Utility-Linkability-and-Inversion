@@ -1,0 +1,77 @@
+{
+  "2026081101": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5028882452486332,
+    "gpu_generation_ms": 57.480381000004854,
+    "packed_template_sha256": "594225154ff81fe035a9fd3d0f13bb1b69542217e7f2bb7de5541f14f16a15b3"
+  },
+  "2026081102": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 3.5762786865234375e-07,
+    "overall_one_rate": 0.49983219701900544,
+    "gpu_generation_ms": 0.9238169999434831,
+    "packed_template_sha256": "89457143327487186b5f891dbf53e172cef60d199c1f51d04441e740750cb619"
+  },
+  "2026081103": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5029085850039052,
+    "gpu_generation_ms": 0.937485999997989,
+    "packed_template_sha256": "acc55f42f66e9892d6b633353ae6c59bb94ffed5738f056274dd880ef0095eab"
+  },
+  "2026081104": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5027448499739651,
+    "gpu_generation_ms": 0.9020460000783714,
+    "packed_template_sha256": "3be5f9ec9465f0ecef51195ebd36733ac79d3a664e455c48f3481aa29604b173"
+  },
+  "2026081105": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "protected_template_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.49951896478781566,
+    "gpu_generation_ms": 2.1500330000208123,
+    "packed_template_sha256": "3c46158378773bec57412c8cbf82754b76e4d9b0575f2e55537efe24debc30b7"
+  }
+}

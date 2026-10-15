@@ -1,0 +1,6 @@
+{
+  "python": "3.13.15",
+  "numpy": "2.1.3",
+  "pandas": "2.3.3",
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39"
+}

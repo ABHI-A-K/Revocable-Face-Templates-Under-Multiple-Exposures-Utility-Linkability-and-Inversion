@@ -1,0 +1,2 @@
+Experiment,Main question,Important metric,Actual result,Simple interpretation
+CFP-FP-E02,Can 512-D CFP-FP embeddings become revocable 128-bit RO templates while retaining utility and resisting cross-key linkage?,TAR@FAR 0.1%; EER; AUC; accuracy; cross-key linkability AUC,Protected TAR 35.929%; EER 13.028%; AUC 93.615%; accuracy 87.306%; pooled attacker linkability AUC 0.5010,Measures the utility cost of 128-bit RO protection and whether independently keyed templates of the same aligned image look unlinkable.

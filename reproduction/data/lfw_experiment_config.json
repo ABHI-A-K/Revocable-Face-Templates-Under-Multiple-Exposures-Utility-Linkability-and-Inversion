@@ -1,0 +1,59 @@
+{
+  "experiment_id": "LFW-E07_INV-embedding-inversion",
+  "e06_reference_notebook_sha256": "d21b829ad6bde5e63a0d4e38f8eac564b1f4032b072b883eb2bd8a4524c13507",
+  "methods": [
+    "RO",
+    "SRHT",
+    "PCA_GUIDED_RO"
+  ],
+  "dimensions": {
+    "embedding": 512,
+    "pca": 256,
+    "template_bits": 128
+  },
+  "base_key_seeds": [
+    2026081101,
+    2026081102,
+    2026081103,
+    2026081104,
+    2026081105,
+    2026081106,
+    2026081107,
+    2026081108,
+    2026081109,
+    2026081110,
+    2026081111,
+    2026081112,
+    2026081113,
+    2026081114,
+    2026081115,
+    2026081116,
+    2026081117,
+    2026081118,
+    2026081119,
+    2026081120
+  ],
+  "exposure_counts": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "number_of_key_trials": 10,
+  "attack_identities_per_fold_requested": 120,
+  "identity_folds": 10,
+  "pairs_per_class_per_fold": 300,
+  "target_far": 0.001,
+  "save_per_image_results": true,
+  "threat_model": {
+    "attacker_has_exposed_binary_templates": true,
+    "attacker_has_corresponding_projection_operators": true,
+    "fresh_query_key_is_not_exposed": true,
+    "system_applies_fresh_key_to_reconstructed_embedding": true,
+    "attacker_training_and_target_identities_are_disjoint": true,
+    "attacker_has_auxiliary_paired_templates_and_embeddings_for_training_identities": true,
+    "fresh_enrollment_uses_a_different_image_of_the_same_identity": true,
+    "pixel_level_face_generation_evaluated": false,
+    "camera_or_pad_bypass_claimed": false
+  }
+}

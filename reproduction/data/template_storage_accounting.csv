@@ -1,0 +1,4 @@
+representation,payload_bytes,reduction_factor,saved_percent,scope
+Raw 512-D float32,2048,1.0,0.0,"template payload only; excludes models, operators, keys, metadata and working memory"
+Protected 128-bit,16,128.0,99.21875,"template payload only; excludes models, operators, keys, metadata and working memory"
+Protected 512-bit,64,32.0,96.875,"template payload only; excludes models, operators, keys, metadata and working memory"

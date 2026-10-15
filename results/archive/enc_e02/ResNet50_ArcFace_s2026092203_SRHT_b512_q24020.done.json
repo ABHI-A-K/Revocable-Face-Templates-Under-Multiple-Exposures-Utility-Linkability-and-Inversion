@@ -1,0 +1,75 @@
+{
+  "binding": {
+    "run": "CFP-ENC-E02",
+    "revision": "E02-v1",
+    "artifact_manifest_sha256": "7aece842b9f364fe2a9230de98031cda16a1113a37cd4b706d5a29e01be2a644",
+    "reference_utility_sha256": "7d9736223df301c1a00ef9bc3b8f9ce0a8af610fe878322318d46da4e78650a0",
+    "keys": [
+      24001,
+      24002,
+      24003,
+      24004,
+      24005,
+      24006,
+      24007,
+      24008,
+      24009,
+      24010,
+      24011,
+      24012,
+      24013,
+      24014,
+      24015,
+      24016,
+      24017,
+      24018,
+      24019,
+      24020
+    ],
+    "splits": [
+      2026092201,
+      2026092202,
+      2026092203
+    ],
+    "exposures": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "numpy": "2.1.3",
+    "sklearn": "1.6.1",
+    "attacker": "StandardScaler + LogisticRegression C=1 liblinear tol=1e-4 max_iter=2000 random_state=0",
+    "replay": "all ordered different-key transitions; same image and cross-image both directions"
+  },
+  "files": {
+    "results/ResNet50_ArcFace_s2026092203_SRHT_b512_q24020_replay.csv": "f8b1bd8fa1618d9e2ec984f4b520c18418bdaa5a5782decf304d472ff18fb5de",
+    "evidence/ResNet50_ArcFace_s2026092203_SRHT_b512_q24020_replay.npz": "b0c22f36e5915d15c294ce5594bcc65a54350080d9e51472a5045cbf104db141",
+    "evidence/ResNet50_ArcFace_s2026092203_SRHT_b512_q24020_replay_index.json": "2493567c959c0f082d6918710e84418ac0342e3ac561c78121aae2acd0e0f6b0",
+    "results/ResNet50_ArcFace_s2026092203_SRHT_b512_q24020_linkage.csv": "5ddc763e3c61d1b2571c09e8533233d2c96fd6f60e5e6389acdf86d5e45f0b82",
+    "evidence/ResNet50_ArcFace_s2026092203_SRHT_b512_q24020_linkage.npz": "130a497d67b15619c20f7bf3fa91a37177a40a98de6f4c6f0f3d1fbd4734a565",
+    "evidence/ResNet50_ArcFace_s2026092203_SRHT_b512_q24020_linkage_index.json": "458a57e93ff06df0fe604ba8192bea15e10972d87546362c22159ca1a5ed1687"
+  }
+}

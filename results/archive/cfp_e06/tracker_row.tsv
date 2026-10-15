@@ -1,0 +1,1 @@
+CFP-FP-E06-PROJ	Which projection balances utility, linkability and cost?	TAR/FAR; template-only K1/2/5/10 attacker AUC; CPU/storage	PCA_GUIDED_RO: TAR 82.38%, FAR 0.2002%, K10 AUC 0.5643; RO: TAR 82.52%, FAR 0.1715%, K10 AUC 0.5667; SRHT: TAR 81.95%, FAR 0.1670%, K10 AUC 0.5629	LFW-aligned threat model; CFP screened subset; 512 primary/128 bridge; no universal security claim

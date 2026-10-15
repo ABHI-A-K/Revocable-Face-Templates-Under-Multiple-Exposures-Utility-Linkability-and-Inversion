@@ -1,0 +1,802 @@
+[
+  {
+    "query_seed": 24001,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24001,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24001,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24001,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24001,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24001,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24001,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24001,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24002,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24002,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24002,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24002,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24002,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24002,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24002,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24002,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24003,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24003,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24003,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24003,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24003,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24003,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24003,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24003,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24004,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24004,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24004,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24004,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24004,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24004,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24004,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24004,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24005,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24005,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24005,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24005,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24005,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24005,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24005,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24005,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24006,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24006,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24006,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24006,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24006,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24006,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24006,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24006,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24007,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24007,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24007,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24007,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24007,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24007,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24007,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24007,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24008,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24008,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24008,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24008,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24008,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24008,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24008,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24008,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24009,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24009,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24009,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24009,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24009,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24009,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24009,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24009,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24010,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24010,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24010,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24010,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24010,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24010,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24010,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24010,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24011,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24011,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24011,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24011,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24011,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24011,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24011,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24011,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24012,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24012,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24012,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24012,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24012,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24012,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24012,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24012,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24013,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24013,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24013,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24013,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24013,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24013,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24013,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24013,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24014,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24014,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24014,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24014,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24014,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24014,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24014,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24014,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24015,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24015,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24015,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24015,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24015,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24015,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24015,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24015,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24016,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24016,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24016,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24016,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24016,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24016,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24016,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24016,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24017,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24017,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24017,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24017,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24017,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24017,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24017,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24017,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24018,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24018,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24018,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24018,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24018,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24018,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24018,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24018,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24019,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24019,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24019,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24019,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24019,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24019,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24019,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24019,
+    "reverse": true,
+    "K": 10
+  },
+  {
+    "query_seed": 24020,
+    "reverse": false,
+    "K": 1
+  },
+  {
+    "query_seed": 24020,
+    "reverse": false,
+    "K": 2
+  },
+  {
+    "query_seed": 24020,
+    "reverse": false,
+    "K": 5
+  },
+  {
+    "query_seed": 24020,
+    "reverse": false,
+    "K": 10
+  },
+  {
+    "query_seed": 24020,
+    "reverse": true,
+    "K": 1
+  },
+  {
+    "query_seed": 24020,
+    "reverse": true,
+    "K": 2
+  },
+  {
+    "query_seed": 24020,
+    "reverse": true,
+    "K": 5
+  },
+  {
+    "query_seed": 24020,
+    "reverse": true,
+    "K": 10
+  }
+]

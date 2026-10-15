@@ -1,0 +1,112 @@
+[
+  {
+    "notebook": "cfp_e05_subset.ipynb",
+    "source": "CFP-FP-E05-ID-SUBSET-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e03_e04_replay.ipynb",
+    "source": "CFP-E03-E04-Reproduction-ready.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e02_ro.ipynb",
+    "source": "CFP-FP-E02-seeded-random-orthogonal-protected-templates(1).ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "lfw_e07_inv.ipynb",
+    "source": "lfw-e07-template-inverse-and-reconstruction-attack.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "enc_e03.ipynb",
+    "source": "CFP-ENC-E03-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "enc_e01a.ipynb",
+    "source": "CFP-ENC-E01A-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "lfw_e05_id.ipynb",
+    "source": "lfw-e05-id-identity-disjoint-multi-exposure-atta(1).ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "lfw_e04_rev.ipynb",
+    "source": "lfw-e04-template-revocation.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e01_aligned.ipynb",
+    "source": "cfp-fp-e01-frozen-mobilefacenet-frontal-to-profi (4)(2).ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_prep4.ipynb",
+    "source": "CFP-FP-E05-PREP-R4-focused-review.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "enc_e04.ipynb",
+    "source": "CFP-ENC-E04-corrected-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_qa.ipynb",
+    "source": "CFP-FP-QA01-original-bin-quality-audit.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e04_rev.ipynb",
+    "source": "cfp-e04-rev-revoked-template-acceptance(1).ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_prep3.ipynb",
+    "source": "CFP-FP-E05-PREP-R3-geometric-mapping.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "lfw_e06_proj.ipynb",
+    "source": "lfw-e06-different-projections-pcs-shrt-ro(2).ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "lfw_e03_link.ipynb",
+    "source": "lfw-e03-cross-key-unlinkability.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "enc_e01b.ipynb",
+    "source": "CFP-ENC-E01B-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "lfw_e02_ro.ipynb",
+    "source": "lfw-e02-seeded-ro-protected-templates-ipynb.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e06_proj.ipynb",
+    "source": "CFP-FP-E06-PROJ \u2014 RO vs SRHT vs PCA-guided RO(2).ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e07_inv.ipynb",
+    "source": "CFP-FP-E07_INV-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "enc_e02.ipynb",
+    "source": "CFP-ENC-E02-ready-to-run.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  },
+  {
+    "notebook": "cfp_e03_dim.ipynb",
+    "source": "CFP-E03-DIM.ipynb",
+    "status": "code preserved; full pipeline not rerun during packaging"
+  }
+]

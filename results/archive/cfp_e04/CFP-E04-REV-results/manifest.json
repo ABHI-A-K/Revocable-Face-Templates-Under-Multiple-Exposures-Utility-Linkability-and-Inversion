@@ -1,0 +1,57 @@
+[
+  {
+    "path": "CFP-E04-REV_brief.md",
+    "bytes": 666,
+    "sha256": "71effb8f7df131970e65581480c10148e064eac404c0a9933b273d8c4773abc3"
+  },
+  {
+    "path": "e03_reproduction_audit.csv",
+    "bytes": 409,
+    "sha256": "5f5d31d08facbe144c87dd5bea48c79c5ee6d460b6d3ca675fff65fba2df5ad5"
+  },
+  {
+    "path": "experiment_record.json",
+    "bytes": 1075,
+    "sha256": "8a0631e82b9811a143c6700db2b02bba9a105bc77f352e59437cfbff253d8338"
+  },
+  {
+    "path": "legitimate_new_key_fold_controls.csv",
+    "bytes": 10493,
+    "sha256": "4c4433bf597fe479fc54ed0137cac8bc95d1e2ef57a37669a84cb4493fc8cb8b"
+  },
+  {
+    "path": "revocation_and_utility.png",
+    "bytes": 45720,
+    "sha256": "c324e21933986382bb1064151106e716c679c1b8b38a0e42e43f8035367c9249"
+  },
+  {
+    "path": "revoked_acceptance_by_key_transition.csv",
+    "bytes": 36924,
+    "sha256": "56fff8b2d3662ffd045bb8feea0fc86a5cd2cba14d93eb2f34ce5ec50633d056"
+  },
+  {
+    "path": "revoked_acceptance_by_key_transition_and_fold.csv",
+    "bytes": 573643,
+    "sha256": "4450e9b3cbd55483a309c409d8ae4aaf301fe9de631d8faae32d3046ceecdc77"
+  },
+  {
+    "path": "revoked_scores_128.csv.gz",
+    "bytes": 4613706,
+    "sha256": "b9becee53ef74d9e6d7828a9a29fc273dd8737ace3e73aa5183e4601ad82103b"
+  },
+  {
+    "path": "revoked_scores_512.csv.gz",
+    "bytes": 5179456,
+    "sha256": "ad4b4f4bd410cb9f332fd047e520ee9b7b7e1b59df7891f0a9205afe6ce98782"
+  },
+  {
+    "path": "summary.csv",
+    "bytes": 1325,
+    "sha256": "385dccd794d4c724eef07e829aea5a13d8ad1694a1dae1df08c41d9a1d6b8421"
+  },
+  {
+    "path": "tracker_rows.csv",
+    "bytes": 899,
+    "sha256": "927cd03625a0a2d8b2691faf8765e3ce7f3a5c5cacffd1c5dade4a6234fdcac2"
+  }
+]

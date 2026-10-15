@@ -1,0 +1,14 @@
+{
+  "raw_float32_bytes_per_template": 2048,
+  "protected_packed_bytes_per_template": 16,
+  "storage_reduction_factor": 128.0,
+  "packed_bitorder": "big",
+  "failed_rows_are_placeholders": true,
+  "benchmark_seed": 2026081101,
+  "pairs_per_batch": 5965,
+  "repetitions": 50,
+  "batch_p50_ms": 1.134569499981808,
+  "batch_p95_ms": 1.8135232500185337,
+  "p50_microseconds_per_pair": 0.19020444257867694,
+  "p95_microseconds_per_pair": 0.30402736798298974
+}

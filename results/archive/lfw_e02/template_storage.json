@@ -1,0 +1,7 @@
+{
+  "raw_float32_bytes_per_template": 2048,
+  "protected_packed_bytes_per_template": 16,
+  "storage_reduction_factor": 128.0,
+  "packed_bitorder": "big",
+  "failed_rows_are_placeholders": true
+}

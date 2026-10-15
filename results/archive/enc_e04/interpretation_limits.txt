@@ -1,0 +1,8 @@
+E04 intervals are conditional on fixed models, PCA, sampled pairs and validation thresholds.
+Identity multiplicities are shared across all overlapping test splits and encoders. Impostor pairs use both identity endpoints.
+Intervals are pointwise, not multiplicity-adjusted; a paired interval excluding zero is not a familywise significance claim.
+At empirical 0%/100%, a degenerate bootstrap interval is not a population guarantee.
+Validation FAR targets below 1/N impostors permit zero false accepts and can yield identical thresholds. Observed test FAR can exceed the target.
+Complete discrete threshold curves are descriptive. No threshold is selected from test outcomes.
+Higher attack acceptance need not imply better reconstruction; read the cosine and recognition results together.
+No official full-CFP, LFW, E02-linkage interval, device-runtime, energy, or camera-impersonation claim is made.

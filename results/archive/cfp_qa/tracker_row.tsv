@@ -1,0 +1,1 @@
+CFP-FP-QA01	Check original-bin crop quality and baseline impact	Decoder agreement; affected pairs; fixed-threshold TAR/FAR	55 original crops exported; affected pairs=204; E01 counts reproduced=True	Quality/sensitivity audit; no E05 attacker or automatic exclusions

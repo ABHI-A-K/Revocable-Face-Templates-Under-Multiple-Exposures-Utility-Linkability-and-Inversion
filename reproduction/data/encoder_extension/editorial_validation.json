@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "revision": "14 October 2026",
+  "sections": 7,
+  "tables_with_captions_and_notes": 16,
+  "figures_with_captions_and_notes": 13,
+  "cfp_encoder_rows_checked": 6,
+  "lfw_encoder_rows_checked": 4,
+  "shared_headline_metrics": {
+    "MbfSmallTar": "37.76--43.50\\%",
+    "MbfSmallAsr": "18.84--32.96\\%",
+    "RnetSmallTar": "65.12--66.94\\%",
+    "RnetSmallAsr": "38.28--53.09\\%",
+    "MbfLargeTar": "81.95--82.52\\%",
+    "MbfLargeAsr": "77.52--78.56\\%",
+    "RnetLargeTar": "94.37--94.67\\%",
+    "RnetLargeAsr": "92.03--92.30\\%",
+    "LfwBaselineAsr": "64.53--80.96\\%"
+  },
+  "experimental_data_changed": false
+}

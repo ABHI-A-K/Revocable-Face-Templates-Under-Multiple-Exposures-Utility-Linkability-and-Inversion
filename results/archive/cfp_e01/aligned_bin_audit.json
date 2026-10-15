@@ -1,0 +1,13 @@
+{
+  "path": "/kaggle/working/cfp_fp_verified_source/cfp_fp.bin",
+  "source_kind": "huggingface:Icar/val_sets@1f7800d9d5ba295554573a4e292e870b64a49b74",
+  "size_bytes": 76267779,
+  "sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+  "published_fallback_sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+  "pairs": 7000,
+  "encoded_pair_sides": 14000,
+  "genuine_pairs": 3500,
+  "impostor_pairs": 3500,
+  "folds": 10,
+  "fold_rule": "contiguous official order: 700 pairs per fold"
+}

@@ -1,0 +1,11 @@
+{
+  "sha256": "76306c783c2ef59c8569ebdcdd2f529f450bcc3fad57c94a5fc2b91df0f10370",
+  "path": "/kaggle/working/CFP-ENC-E01A/public_inputs/cfp_fp.bin",
+  "pairs": 7000,
+  "pair_sides": 14000,
+  "unique_crops": 5890,
+  "fold_rule": "10 contiguous folds, 700 pairs each, 350G/350I",
+  "detector": false,
+  "flip": false,
+  "resize": false
+}

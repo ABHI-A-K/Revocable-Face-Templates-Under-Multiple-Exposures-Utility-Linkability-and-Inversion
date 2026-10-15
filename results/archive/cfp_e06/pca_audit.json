@@ -1,0 +1,17 @@
+[
+  {
+    "split_seed": 2026092201,
+    "calibration_images": 1131,
+    "variance_256": 0.9721137708743279
+  },
+  {
+    "split_seed": 2026092202,
+    "calibration_images": 1122,
+    "variance_256": 0.9716215287635422
+  },
+  {
+    "split_seed": 2026092203,
+    "calibration_images": 1159,
+    "variance_256": 0.971561863978221
+  }
+]

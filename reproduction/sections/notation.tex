@@ -1,0 +1,31 @@
+% Nonfloating to ensure that notation precedes the equations.
+\par\medskip\noindent\begin{minipage}{\columnwidth}
+\makeatletter\def\@captype{table}\makeatother
+\caption{Notation used in the protection and evaluation models.}
+\label{tab:notation}\centering\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}p{1.65cm}>{\raggedright\arraybackslash}X@{}}
+\toprule Symbol & Meaning \\\midrule
+$I,f_\theta$ & Aligned face image and frozen feature encoder.\\
+$x,z,g$ & Unit raw embedding, unit projection input, and preprocessing map from $x$ to $z$.\\
+$d_0,d,m$ & Raw dimension (512), projection-input dimension, and template length in bits.\\
+$\unit(u)$ & Vector normalization, $u/\|u\|_2$ for $u\ne0$.\\
+$k,q,K$ & Historical key, fresh query key, and number of exposed historical records.\\
+$W_k,b_k,y_k$ & Keyed $d\times m$ projection, binary template, and signed template $2b_k-1$.\\
+$\mu,U_d$ & Fitted PCA mean and retained eigenvector basis.\\
+$D_k,H_d,S_k$ & Sign diagonal, normalized Hadamard matrix, and coordinate selector for SRHT.\\
+$s_H,\tau,\alpha$ & Bit-agreement score, acceptance threshold, and validation FAR target.\\
+$\mathcal E_K,\mathcal I_K$ & Exposed-key set and information available to the inversion attacker.\\
+$v_K,a,c$ & Mean signed backprojection and fitted coordinate scales and offsets.\\
+$\hat z,\hat x$ & Reconstructed projection input and raw embedding.\\
+$x_a,x_b$ & Exposed source embedding and a different-photo enrollment embedding.\\
+$\rho_{\mathcal T}$ & Training-only projected norm used for PCA lifting.\\
+$A_K,\mathcal F_K$ & Stacked measurement matrix and closed feasible set of unit directions.\\
+$B_m,S_m(N)$ & Bytes per template and payload for $N$ stored references.\\
+$\mathcal G,\mathcal J$ & Genuine and impostor score sets.\\
+$\hat\theta,\Delta$ & Estimated rate and paired configuration difference.\\
+$S,U,w_i^{(b)}$ & Split count, unique identity count, and identity multiplicity in bootstrap draw $b$.\\
+\bottomrule
+\end{tabularx}
+\tabnote{TAR, FAR, and ASR denote genuine, impostor, and attack acceptance rates. Dimensions distinguish vectors from scalars; subscripts identify keys, coordinates, or evaluation conditions.}
+\end{minipage}\par\medskip

@@ -1,0 +1,12 @@
+{
+  "samples": 119300,
+  "balanced_accuracy": 0.5015898922622544,
+  "link_detection_rate": 0.1961590070446159,
+  "false_link_rate": 0.19297922252010724,
+  "tp": 11695,
+  "tn": 48163,
+  "fp": 11517,
+  "fn": 47925,
+  "mean_fold_balanced_accuracy": 0.501657396773774,
+  "fold_balanced_accuracy_std": 0.003966318303537734
+}

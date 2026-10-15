@@ -1,0 +1,11 @@
+{
+  "fit_partition": "pca_calibration_only",
+  "calibration_identities": 1024,
+  "calibration_images": 1024,
+  "evaluation_identity_overlap": 0,
+  "input_dimension": 512,
+  "output_dimension": 256,
+  "whiten": false,
+  "explained_variance_ratio_sum": 0.956870973110199,
+  "fit_seconds": 0.8298586710000109
+}

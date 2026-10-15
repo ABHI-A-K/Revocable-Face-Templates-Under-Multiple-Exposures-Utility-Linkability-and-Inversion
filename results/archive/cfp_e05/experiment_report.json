@@ -1,0 +1,63 @@
+{
+  "experiment": "CFP-FP-E05-ID-SUBSET",
+  "run_completed": true,
+  "protocol": "screened-subset; known-key; same-image multi-exposure; raw frontal gallery / profile probes",
+  "identity_mapping": "geometric-screen-supported, not fully certified",
+  "subset_images": 5704,
+  "identities": 500,
+  "train_validation_test_identities": [
+    350,
+    75,
+    75
+  ],
+  "split_seeds": [
+    2026092201,
+    2026092202,
+    2026092203
+  ],
+  "key_seeds": [
+    24001,
+    24002,
+    24003,
+    24004,
+    24005,
+    24006,
+    24007,
+    24008,
+    24009,
+    24010
+  ],
+  "bits": [
+    512,
+    128
+  ],
+  "exposures": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "alpha_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "selection": "validation macro rank1, larger alpha on ties",
+  "original_benchmark_modified": false,
+  "full_cache_identity_gate_passed": false,
+  "attacker_executed": true,
+  "seconds": 9.804781913757324,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "limitations": [
+    "Screened mapping, no independent identity certification",
+    "Post-hoc subset selected after quality review",
+    "One projection-key set",
+    "Repeated splits are not independent confidence intervals",
+    "Known-key raw-gallery attacker only",
+    "No face image reconstruction or impersonation test"
+  ]
+}

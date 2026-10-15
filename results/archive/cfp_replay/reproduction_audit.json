@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-09-17T06:43:06.035815+00:00",
+  "execution": "Local CPU; independent packed-byte XOR/popcount implementation",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "inputs": {
+    "e03_package_sha256": "87c81b26c4ad8778a37db9f31277b3f0dc4c8ea2a43f1f2eda188c19b5508de9",
+    "e04_package_sha256": "6d0d479385cc6f81941627e5967dc49ea8e97a783a449cdd2ac6873ffdb72c4e",
+    "e03_results_sha256": "5e173220ca6024b3d2be5d58025241272b79c194f4bad92e8b718c1794282e1e",
+    "e03_cache_sha256": "3e5b4b8dab19f6b1d20c1e376e26b350b06719ad8b02295a4f0ac8e77eb5abdb"
+  },
+  "manifest_files_verified": {
+    "e03_results": 58,
+    "e03_cache": 50,
+    "e04_results": 11
+  },
+  "source_hashes_match_E04": true,
+  "checks": [
+    {
+      "bits": 512,
+      "same_key_scores_exact": 70000,
+      "thresholds_exact": 100,
+      "revoked_scores_exact": 1260000,
+      "revoked_decisions_exact": 1260000
+    },
+    {
+      "bits": 128,
+      "same_key_scores_exact": 70000,
+      "thresholds_exact": 100,
+      "revoked_scores_exact": 1260000,
+      "revoked_decisions_exact": 1260000
+    }
+  ],
+  "limitations": [
+    "Reproduction starts from cached protected templates; raw embeddings and images were not regenerated.",
+    "Same dataset, pairs and keys: replication is not additional independent statistical evidence.",
+    "No identity-disjoint attacker, inversion, authenticated cloud deployment or zero-risk claim."
+  ]
+}

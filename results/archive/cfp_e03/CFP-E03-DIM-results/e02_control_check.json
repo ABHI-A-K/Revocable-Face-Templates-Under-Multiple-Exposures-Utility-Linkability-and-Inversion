@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "all_70000_pair_scores_exact": true,
+  "metric_tolerance": 1e-12
+}

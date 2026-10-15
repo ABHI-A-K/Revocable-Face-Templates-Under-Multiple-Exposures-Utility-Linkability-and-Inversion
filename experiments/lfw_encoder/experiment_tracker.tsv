@@ -1,0 +1,4 @@
+LFW-ENC-E01	PASS	7701 records; 7682 valid; exact frozen MBF; 5965 matcher pairs	lfw_encoder/results/run_status.json
+CFP-ENC-E01A–E04	VALIDATED	672 E04 primary estimates reproduce E03; paired encoder intervals checked	paper_revision/data/encoder_extension/cross_archive_validation.json
+Manuscript	UPDATED_PENDING_PDF_QA	Second-encoder comparison and corrected plots integrated	paper_revision/main.tex
+Submission	NOT_SUBMITTED	Target venue and submission metadata not confirmed	

@@ -1,0 +1,87 @@
+{
+  "2026081101": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "biohash_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5028831603098152,
+    "minimum_bit_one_rate": 0.4297058057797449,
+    "maximum_bit_one_rate": 0.5826607654256704,
+    "generation_elapsed_ms": 13.497586000084993,
+    "generation_microseconds_per_valid_template": 1.7570406144343913
+  },
+  "2026081102": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "biohash_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 3.5762786865234375e-07,
+    "overall_one_rate": 0.49982406111689665,
+    "minimum_bit_one_rate": 0.4345222598281697,
+    "maximum_bit_one_rate": 0.6171569903670919,
+    "generation_elapsed_ms": 8.776743999987957,
+    "generation_microseconds_per_valid_template": 1.1425076802900231
+  },
+  "2026081103": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "biohash_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5029055340406144,
+    "minimum_bit_one_rate": 0.42189533975527205,
+    "maximum_bit_one_rate": 0.5835719864618589,
+    "generation_elapsed_ms": 5.927358000008098,
+    "generation_microseconds_per_valid_template": 0.7715904712325043
+  },
+  "2026081104": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "biohash_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.5027316291330383,
+    "minimum_bit_one_rate": 0.4187711533454829,
+    "maximum_bit_one_rate": 0.5850039052330123,
+    "generation_elapsed_ms": 7.264354999961142,
+    "generation_microseconds_per_valid_template": 0.9456332986150927
+  },
+  "2026081105": {
+    "projection_shape": [
+      512,
+      128
+    ],
+    "biohash_shape": [
+      7701,
+      128
+    ],
+    "valid_templates": 7682,
+    "orthogonality_max_error": 4.76837158203125e-07,
+    "overall_one_rate": 0.4995118458734705,
+    "minimum_bit_one_rate": 0.4143452225982817,
+    "maximum_bit_one_rate": 0.6092163499088779,
+    "generation_elapsed_ms": 9.076683000103003,
+    "generation_microseconds_per_valid_template": 1.1815520697869049
+  }
+}
